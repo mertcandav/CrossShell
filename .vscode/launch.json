@@ -5,7 +5,7 @@
             "type": "python",
             "request": "launch",
             "name": "CLI",
-            "program": "${file}"
+            "program": "${workspaceFolder}\\src\\main.py",
         }
     ]
 }
