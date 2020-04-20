@@ -11,7 +11,7 @@ class cmdProcessor:
     @staticmethod
     def readyCmd(title: str,cmd: str):
         cmd = cmd[title.__len__():]
-        cmd = cmd.strip()
+        cmd = cmdProcessor.clearCmd(cmd)
         return cmd
         pass
 
