@@ -35,7 +35,7 @@ def main():
     # Command input loop.
     while True:
         _input = cmdProcessor.clearCmd(_terminal.getInput())
-        cmdProcessor.process(_input)
+        cmdProcessor.process(_terminal,_input)
         pass
     pass
 

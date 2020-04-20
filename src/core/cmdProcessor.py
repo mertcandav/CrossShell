@@ -1,3 +1,7 @@
+# Imports.
+from core.terminal.terminal import *
+from core.functions.cd import *
+
 class cmdProcessor:
     @staticmethod
     def clearCmd(cmd: str):
@@ -5,8 +9,20 @@ class cmdProcessor:
         pass
 
     @staticmethod
-    def process(cmd: str):
-        if cmd.__eq__(""):
+    def readyCmd(title: str,cmd: str):
+        cmd = cmd[title.__len__():]
+        cmd = cmd.strip()
+        return cmd
+        pass
+
+    @staticmethod
+    def process(term: terminal,cmd: str):
+        if cmd == "":
+            return
+            pass
+        if cmd.startswith("cd "):
+            cmd = cmdProcessor.readyCmd("cd ",cmd)
+            term.CurrentPath = func_cd.process(term.CurrentPath,cmd).__str__()
             return
             pass
 
