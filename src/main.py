@@ -34,7 +34,7 @@ _terminal = terminal(os.getcwd())
 def main():
     # Command input loop.
     while True:
-        _input = _terminal.getInput()
+        _input = cmdProcessor.clearCmd(_terminal.getInput())
         cmdProcessor.process(_input)
         pass
     pass
