@@ -20,6 +20,9 @@ class cmdProcessor:
         if cmd == "":
             return
             pass
+        if cmd == "exit":
+            exit(0)
+            pass
         if cmd.startswith("cd "):
             cmd = cmdProcessor.readyCmd("cd ",cmd)
             term.CurrentPath = func_cd.process(term.CurrentPath,cmd).__str__()
