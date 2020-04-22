@@ -1,3 +1,7 @@
+# Imports.
+import sys
+from core.CrossShell import *
+
 class terminal:
     # Fields.
     CurrentPath = ""
@@ -12,8 +16,19 @@ class terminal:
         pass
 
     # Get input.
-    def getInput(self):
-        return input(self.CurrentPath + ">")
+    def getInput(self) -> str:
+        sys.stdout.write(CYAN)
+        print(self.CurrentPath + ">", end = '')
+        sys.stdout.write(RESET)
+        val = input()
+        return val
+        pass
+
+    @staticmethod
+    def cprint(style,val: str):
+        sys.stdout.write(style)
+        print(val)
+        sys.stdout.write(RESET)
         pass
 
     pass
