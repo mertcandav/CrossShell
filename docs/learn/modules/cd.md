@@ -1,4 +1,4 @@
-``cd``
+# cd
 
 Allows you to manage the current location. It has the same function as what you know from most shell.
 
