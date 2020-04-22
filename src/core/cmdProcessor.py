@@ -3,6 +3,7 @@ import platform
 import os
 from core.terminal.terminal import *
 from core.functions.cd import *
+from core.functions.sysinfo import *
 
 class cmdProcessor:
     @staticmethod
@@ -20,7 +21,6 @@ class cmdProcessor:
     @staticmethod
     def process(term: terminal,cmd: str):
         if cmd == "":
-            return
             pass
         if cmd == "exit":
             exit(0)
@@ -32,15 +32,18 @@ class cmdProcessor:
             else:
                 os.system("clear")
                 pass
-            return
             pass
         if cmd.startswith("cd "):
             cmd = cmdProcessor.readyCmd("cd ",cmd)
             term.CurrentPath = func_cd.process(term.CurrentPath,cmd).__str__()
-            return
             pass
-
-        print("Command not recognized!")
+        if cmd.startswith("sysinfo "):
+            cmd = cmdProcessor.readyCmd("sysinfo ",cmd)
+            func_sysinfo.process(cmd)
+            pass
+        else:
+            print("Command not recognized!")
+            pass
         pass
 
     pass
