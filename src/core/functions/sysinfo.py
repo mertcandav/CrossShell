@@ -2,15 +2,16 @@
 import platform
 import os
 from core.paramProcessor import paramProcessor
+from core.moduleProcessor import moduleProcessor
 
 class func_sysinfo:
     @staticmethod
     def process(cmd: str):
         params = paramProcessor.getParams(cmd)
-        if params == "$ERROR":
+        if moduleProcessor.checkParams(params,1) == "$ERROR":
             return
             pass
-        if params.__len__() > 1 & params.count("all") > 0:
+        if params.count("all") > 0:
             print("The -all parameter can only be used alone!")
             return
             pass

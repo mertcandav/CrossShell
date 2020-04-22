@@ -24,7 +24,7 @@ class paramProcessor:
                 pass
             
             if param in params:
-                print(param + "\nA parameter cannot be defined more than once!")
+                print("A parameter cannot be defined more than once!")
                 return "$ERROR"
                 pass
             params.append(param)
