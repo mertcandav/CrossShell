@@ -1,0 +1,2 @@
+ERROR = "$ERROR"
+NO_ERROR = "$NONERROR"
