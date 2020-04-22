@@ -24,6 +24,7 @@
 # Imports.
 import sys
 import os
+import platform
 from core.terminal.terminal import *
 from core.cmdProcessor import *
 
@@ -41,5 +42,8 @@ def main():
 
 # Main point
 if __name__ == "__main__":
+    if platform.system() == "Windows":
+        cmdProcessor.process(_terminal,"clear")
+        pass
     main()
     pass
