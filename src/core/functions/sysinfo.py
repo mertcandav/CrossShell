@@ -1,6 +1,7 @@
 # Imports.
 import platform
 import os
+from core.CrossShell import *
 from core.paramProcessor import paramProcessor
 from core.moduleProcessor import moduleProcessor
 
@@ -8,7 +9,7 @@ class func_sysinfo:
     @staticmethod
     def process(cmd: str):
         params = paramProcessor.getParams(cmd)
-        if moduleProcessor.checkParams(params,1) == "$ERROR":
+        if moduleProcessor.checkParams(params,1) == ERROR:
             return
             pass
         if params.count("all") > 0:

@@ -1,3 +1,6 @@
+# Imports.
+from core.CrossShell import *
+
 class paramProcessor:
     @staticmethod
     def getParams(val: str):
@@ -6,7 +9,7 @@ class paramProcessor:
             dex = val.find("-")
             if dex+1 == val.__len__():
                 print("The parameter must be defined after the parameter declaration!")
-                return "$ERROR"
+                return ERROR
                 pass
             spacedex = val.find(" ",dex)
             param = ""
@@ -16,7 +19,7 @@ class paramProcessor:
             else:
                 if dex + 1 == spacedex:
                     print("Cannot space after the parameter declaration!")
-                    return "$ERROR"
+                    return ERROR
                     pass
                 else:
                     param = val[dex+1:spacedex]
@@ -25,7 +28,7 @@ class paramProcessor:
             
             if param in params:
                 print("A parameter cannot be defined more than once!")
-                return "$ERROR"
+                return ERROR
                 pass
             params.append(param)
             val = val[spacedex:]
