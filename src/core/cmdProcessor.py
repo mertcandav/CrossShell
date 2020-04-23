@@ -4,6 +4,7 @@ import os
 from core.terminal.terminal import *
 from core.functions.cd import *
 from core.functions.sysinfo import *
+from core.functions.netinfo import *
 
 class cmdProcessor:
     @staticmethod
@@ -43,6 +44,11 @@ class cmdProcessor:
         if cmd.startswith("sysinfo "):
             cmd = cmdProcessor.readyCmd("sysinfo ",cmd)
             func_sysinfo.process(cmd)
+            return
+            pass
+        if cmd.startswith("netinfo "):
+            cmd = cmdProcessor.readyCmd("netinfo ",cmd)
+            func_netinfo.process(cmd)
             return
             pass
 
