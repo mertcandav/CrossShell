@@ -4,6 +4,7 @@ import os
 from core.CrossShell import *
 from core.paramProcessor import paramProcessor
 from core.moduleProcessor import moduleProcessor
+from core.terminal.terminal import *
 
 class func_sysinfo:
     @staticmethod
@@ -16,7 +17,7 @@ class func_sysinfo:
             return
             pass
         if params.count("all") > 0:
-            print("The -all parameter can only be used alone!")
+            cprintln(RED,"The -all parameter can only be used alone!")
             return
             pass
 
@@ -39,7 +40,7 @@ class func_sysinfo:
             )
             pass
         else:
-            print("'sysinfo' command cannot processed!")
+            cprintln(RED,"'sysinfo' command cannot processed!")
             pass
         pass
 

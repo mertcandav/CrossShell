@@ -24,11 +24,18 @@ class terminal:
         return val
         pass
 
-    @staticmethod
-    def cprint(style,val: str):
-        sys.stdout.write(style)
-        print(val)
-        sys.stdout.write(RESET)
-        pass
+    pass
 
+# Functions.
+
+def cprint(style,val: str):
+    sys.stdout.write(style)
+    print(val, end = '')
+    sys.stdout.write(RESET)
+    pass
+
+def cprintln(style,val: str):
+    sys.stdout.write(style)
+    print(val)
+    sys.stdout.write(RESET)
     pass

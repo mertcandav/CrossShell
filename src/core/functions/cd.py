@@ -1,6 +1,7 @@
 # Imports.
-from pathlib import *
 import os
+from pathlib import *
+from core.terminal.terminal import *
 
 class func_cd:
     @staticmethod
@@ -17,7 +18,7 @@ class func_cd:
         else: # Open directory
             pth = pth.joinpath(cmd)
             if pth.is_dir() == False & os.path.exists(pth.__str__()) == False:
-                print("There is no directory with this name!")
+                cprintln(RED,"There is no directory with this name!")
                 return pth.parent
                 pass
             return pth.__str__()

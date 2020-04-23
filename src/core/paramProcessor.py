@@ -9,7 +9,7 @@ class paramProcessor:
         while(val.find("-") != -1):
             dex = val.find("-")
             if dex+1 == val.__len__():
-                print("The parameter must be defined after the parameter declaration!")
+                cprintln(RED,"The parameter must be defined after the parameter declaration!")
                 return ERROR
                 pass
             spacedex = val.find(" ",dex)
@@ -19,7 +19,7 @@ class paramProcessor:
                 pass
             else:
                 if dex + 1 == spacedex:
-                    print("Cannot space after the parameter declaration!")
+                    cprintln(RED,"Cannot space after the parameter declaration!")
                     return ERROR
                     pass
                 else:
@@ -28,7 +28,7 @@ class paramProcessor:
                 pass
             
             if param in params:
-                print("A parameter cannot be defined more than once!")
+                cprintln(RED,"A parameter cannot be defined more than once!")
                 return ERROR
                 pass
             params.append(param)
