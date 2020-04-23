@@ -46,7 +46,7 @@ class cmdProcessor:
             return
             pass
 
-        cprintln(RED,"Command not recognized!")
+        cprintln(RED,f"'{cmd}' Command not recognized!")
         pass
 
     pass
