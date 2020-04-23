@@ -27,7 +27,10 @@ class func_netinfo:
         if cmd == "-help":
             print(
                 "netinfo:\n"
-                "   -all: Show all informations of network."
+                "   -help: Show help of module. This parameter can only be used alone.\n"
+                "   -all: Show all informations of network. This parameter can only be used alone.\n"
+                "   -hostname: Show hostname.\n"
+                "   -ip: Show ip."
             )
             return
             pass
