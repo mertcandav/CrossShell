@@ -17,6 +17,10 @@ class func_sysinfo:
             cprintln(RED,"The -all parameter can only be used alone!")
             return
             pass
+        if params.__len__() > 1 & params.count("help") > 0:
+            cprintln(RED,"The -help parameter can only be used alone!")
+            return
+            pass
 
         # ---
 
