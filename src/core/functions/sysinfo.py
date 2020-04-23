@@ -16,10 +16,6 @@ class func_sysinfo:
         if moduleProcessor.checkParams(params,1) == ERROR:
             return
             pass
-        if params.count("all") > 0:
-            cprintln(RED,"The -all parameter can only be used alone!")
-            return
-            pass
 
         # ---
 
@@ -28,6 +24,8 @@ class func_sysinfo:
                 "sysinfo:\n"
                 "   -all: Show all informations of system."
             )
+            return
+            pass
         if cmd == "-all":
             print(
                 "Platform: " + platform.system() + "\n"
@@ -38,10 +36,10 @@ class func_sysinfo:
                 "CPU: " + platform.processor() + "\n"
                 "CPU~Cores: " + platform.os.cpu_count().__str__()
             )
+            return
             pass
-        else:
-            cprintln(RED,"'sysinfo' command cannot processed!")
-            pass
+
+        cprintln(RED,"'sysinfo' command cannot processed!")
         pass
 
     pass
