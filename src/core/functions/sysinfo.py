@@ -27,7 +27,15 @@ class func_sysinfo:
         if cmd == "-help":
             print(
                 "sysinfo:\n"
-                "   -all: Show all informations of system."
+                "   -help: Show help of module. This parameter can only be used alone.\n"
+                "   -all: Show all informations of system. This parameter can only be used alone.\n"
+                "   -cpu: Show about of processor.\n"
+                "   -cpuc: Show core count of processor.\n"
+                "   -platform: Show platform name.\n"
+                "   -node: Show network name of current pc.\n"
+                "   -rls: Show release of system.\n"
+                "   -ver: Show version of system release.\n"
+                "   -machine: Show machine type."
             )
             return
             pass
