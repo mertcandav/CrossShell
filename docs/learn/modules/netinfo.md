@@ -14,4 +14,7 @@ This module is a module that allows you to get information about the network.
     Show hostname.
 
 + ``-ip``<br>
-    Show ip address.
+    Show IPv4 address.
+
++ ``-mac``<br>
+    Show physical address.
