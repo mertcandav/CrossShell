@@ -14,12 +14,12 @@ class func_netinfo:
         if params == ERROR:
             return
             pass
-        if params.__len__() > 1 & params.count("all") > 0:
-            cprintln(RED,"The -all parameter can only be used alone!")
-            return
-            pass
         if params.__len__() > 1 & params.count("help") > 0:
             cprintln(RED,"The -help parameter can only be used alone!")
+            return
+            pass
+        if params.__len__() > 1 & params.count("all") > 0:
+            cprintln(RED,"The -all parameter can only be used alone!")
             return
             pass
 
