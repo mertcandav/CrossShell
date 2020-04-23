@@ -11,22 +11,22 @@ This module is a module that allows you to get information about the system.
     Show all informations. This parameter can only be used alone.
 
 + ``-cpu``<br>
-    Get proccesor.
+    Show about of proccesor.
 
 + ``-cpuc``<br>
-    Get core count of processor.
+    Show core count of processor.
 
 + ``-platform``<br>
-    Get platform name.
+    Show platform name.
 
 + ``-node``<br>
-    Get network name of current pc.
+    Show network name of current pc.
 
 + ``-rls``<br>
-    Get release of system.
+    Show release of system.
 
 + ``-ver``<br>
-    Get version of system release.
+    Show version of system release.
 
 + ``-machine``<br>
-    Get machine type.
+    Show machine type.
