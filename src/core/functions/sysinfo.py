@@ -13,7 +13,8 @@ class func_sysinfo:
         if params == ERROR:
             return
             pass
-        if moduleProcessor.checkParams(params,1) == ERROR:
+        if params.__len__() > 1 & params.count("all") > 0:
+            cprintln(RED,"The -all parameter can only be used alone!")
             return
             pass
 
@@ -38,8 +39,45 @@ class func_sysinfo:
             )
             return
             pass
+        msg = ""
+        for element in params:
+            if element == "platform":
+                msg += "Platform: " + platform.system() + "\n"
+                continue
+                pass
+            if element == "ver":
+                msg += "Version: " + platform.version() + "\n"
+                continue
+                pass
+            if element == "rls":
+                msg += "Release: " + platform.release() + "\n"
+                continue
+                pass
+            if element == "node":
+                msg += "Node: " + platform.node() + "\n"
+                continue
+                pass
+            if element == "machine":
+                msg += "Machine: " + platform.machine() + "\n"
+                continue
+                pass
+            if element == "cpu":
+                msg += "CPU: " + platform.processor() + "\n"
+                continue
+                pass
+            if element == "cpuc":
+                msg += "CPU~Cores: " + platform.os.cpu_count().__str__() + "\n"
+                continue
+                pass
 
-        cprintln(RED,"'sysinfo' command cannot processed!")
+            cprintln(RED,f"'{element}' parameter cannot processed!")
+            msg = ERROR
+            pass
+
+        if msg != ERROR:
+            print(msg[0:msg.__len__()-1])
+            return
+            pass
         pass
 
     pass
