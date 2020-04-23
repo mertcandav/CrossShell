@@ -42,6 +42,7 @@ def main():
 
 # Main point
 if __name__ == "__main__":
+    sys.stdout.write("\x1b]2;CrossShell\x07")
     if platform.system() == "Windows":
         cmdProcessor.process(_terminal,"clear")
         pass
