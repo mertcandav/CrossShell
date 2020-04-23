@@ -1,5 +1,6 @@
 # Imports.
 import os
+import shutil
 from pathlib import *
 from core.terminal.terminal import *
 
@@ -7,22 +8,24 @@ class func_cd:
     @staticmethod
     def process(path: str,cmd: str):
         pth = Path(path)
-        if(cmd == ".."): # Go parent directory
-            if len(pth.parents) == 0:
-                return path
+        pth = pth.joinpath(cmd + "\\")
+        pthstr = pth.__str__()
+        parts = pthstr.split('\\')
+        pth = Path(parts[0] + "\\")
+        for element in parts:
+            if element == "..":
+                pth = pth.parent
+                continue
                 pass
-            else:
-                return pth.parent
-                pass
+            pth = pth.joinpath(element + "\\")
             pass
-        else: # Open directory
-            pth = pth.joinpath(cmd)
-            if pth.is_dir() == False & os.path.exists(pth.__str__()) == False:
-                cprintln(RED,"There is no directory with this name!")
-                return pth.parent
-                pass
-            return pth.__str__()
+        pthstr = pth.__str__()
+        if os.path.isdir(pthstr) == False | os.path.exists(pthstr) == False:
+            cprintln(RED,"There is no directory with this name!")
+            return pth.parent
             pass
+        return pthstr[0:pthstr.__len__()]
         pass
+    pass
 
     pass
