@@ -1,5 +1,6 @@
 # Imports.
 from core.CrossShell import *
+from core.terminal.terminal import *
 
 class paramProcessor:
     @staticmethod

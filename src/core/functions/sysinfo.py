@@ -9,6 +9,9 @@ class func_sysinfo:
     @staticmethod
     def process(cmd: str):
         params = paramProcessor.getParams(cmd)
+        if params == ERROR:
+            return
+            pass
         if moduleProcessor.checkParams(params,1) == ERROR:
             return
             pass
