@@ -32,3 +32,11 @@ Declaring a parameter and not defining the parameter will result in errors and /
 ```
 sysinfo -
 ```
+#
+Some modules can take more than one parameter. The order of this does not matter, the parameters can be declared in any order. As:
+```
+sysinfo -cpu -cpuc -rls
+```
+```
+sysinfo -cpu -rls -cpuc -node
+```
