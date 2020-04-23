@@ -7,4 +7,4 @@ The CrossShell terminal.
 <br>
 
 ## What is CrossShell?
-CrossShell is a cross-platform terminal(command line) sowftware. Striving to be an advanced terminal and respond to your needs!
+CrossShell is a cross-platform terminal(command line) software. Striving to be an advanced terminal and respond to your needs!
