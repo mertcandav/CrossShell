@@ -31,7 +31,8 @@ class func_netinfo:
                 "   -help: Show help of module. This parameter can only be used alone.\n"
                 "   -all: Show all informations of network. This parameter can only be used alone.\n"
                 "   -hostname: Show hostname.\n"
-                "   -ip: Show ip address."
+                "   -ip: Show IPv4 address.\n"
+                "   -mac: Show physical address."
             )
             return
             pass
