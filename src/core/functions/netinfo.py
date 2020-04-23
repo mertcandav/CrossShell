@@ -5,6 +5,7 @@ from core.CrossShell import *
 from core.paramProcessor import paramProcessor
 from core.moduleProcessor import moduleProcessor
 from core.terminal.terminal import *
+import uuid
 
 class func_netinfo:
     @staticmethod
@@ -37,7 +38,8 @@ class func_netinfo:
         if cmd == "-all":
             print(
                 "Hostname: " + socket.gethostname() + "\n"
-                "IP: " + socket.gethostbyname(socket.gethostname())
+                "IPv4 Address: " + socket.gethostbyname(socket.gethostname()) + "\n"
+                "Physical Address: " + ':'.join(("%012X" % uuid.getnode()) [i:i+2] for i in range(0,12,2))
             )
             return
             pass
@@ -48,7 +50,11 @@ class func_netinfo:
                 continue
                 pass
             if element == "ip":
-                msg += "IP: " + socket.gethostbyname(socket.gethostname()) + "\n"
+                msg += "IPv4 Address: " + socket.gethostbyname(socket.gethostname()) + "\n"
+                continue
+                pass
+            if element == "mac":
+                msg += "Physical Address: " + ':'.join(("%012X" % uuid.getnode()) [i:i+2] for i in range(0,12,2)) + "\n"
                 continue
                 pass
 
