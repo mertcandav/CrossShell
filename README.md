@@ -8,3 +8,9 @@ The CrossShell terminal.
 
 ## What is CrossShell?
 CrossShell is a cross-platform terminal(command line) software. Striving to be an advanced terminal and respond to your needs!
+
+#
+
+<br>
+
+[![Preview](https://github.com/mertcandav/CrossShell/blob/master/docs/res/other/prew.gif)](https://github.com/mertcandav/CrossShell)
