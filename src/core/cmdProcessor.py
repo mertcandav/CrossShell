@@ -5,6 +5,7 @@ from core.terminal.terminal import *
 from core.functions.cd import *
 from core.functions.sysinfo import *
 from core.functions.netinfo import *
+from core.functions.ls import *
 
 class cmdProcessor:
     @staticmethod
@@ -49,6 +50,11 @@ class cmdProcessor:
         if cmd.startswith("netinfo "):
             cmd = cmdProcessor.readyCmd("netinfo ",cmd)
             func_netinfo.process(cmd)
+            return
+            pass
+        if cmd.startswith("ls"):
+            cmd = cmdProcessor.readyCmd("ls",cmd)
+            func_ls.process(term,cmd)
             return
             pass
 
