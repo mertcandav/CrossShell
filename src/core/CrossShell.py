@@ -4,7 +4,8 @@ VERSION = "0.0.1"
 # Content of commands
 ABOUT = f"""CrossShell ~ [ Version: {VERSION} ]
 Copyright (c) 2020 Mertcan Davulcu"""
-HELP = """EXIT              Exit from CrossShell.
+HELP = """HELP              Show help of CrossShell commands.
+EXIT              Exit from CrossShell.
 ABOUT             Show about info of CrossShell.
 CLEAR             Clear the CLI screen.
 
