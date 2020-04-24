@@ -1,6 +1,6 @@
 # Imports.
 import os
-from core.paramProcessor import *
+from engine.paramProcessor import *
 from core.CrossShell import *
 from core.terminal.terminal import *
 

@@ -26,7 +26,7 @@ import sys
 import os
 import platform
 from core.terminal.terminal import *
-from core.cmdProcessor import *
+from engine.cmdProcessor import *
 
 # Fields.
 _terminal = terminal(os.getcwd())

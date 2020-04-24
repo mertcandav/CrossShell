@@ -24,6 +24,7 @@
 # Fields
 SRCDIR = ./src/
 COREDIR = $(SRCDIR)core/
+ENGINEDIR = $(SRCDIR)engine/
 
 # Workflow
 all: execute

@@ -2,8 +2,8 @@
 import platform
 import os
 from core.CrossShell import *
-from core.paramProcessor import paramProcessor
-from core.moduleProcessor import moduleProcessor
+from engine.paramProcessor import paramProcessor
+from engine.moduleProcessor import moduleProcessor
 from core.terminal.terminal import *
 
 class func_sysinfo:
