@@ -1,3 +1,10 @@
+# CrossShell
+VERSION = "0.0.1"
+
+# Content of commands
+ABOUT = f"""CrossShell ~ [ Version: {VERSION} ]
+Copyright (c) 2020 Mertcan Davulcu"""
+
 # States
 ERROR = "$ERROR"
 NO_ERROR = "$NONERROR"

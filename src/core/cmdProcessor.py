@@ -37,6 +37,10 @@ class cmdProcessor:
                 pass
             return
             pass
+        if cmd == "about":
+            print(ABOUT)
+            return
+            pass
         if cmd.startswith("cd "):
             cmd = cmdProcessor.readyCmd("cd ",cmd)
             term.CurrentPath = func_cd.process(term.CurrentPath,cmd).__str__()
