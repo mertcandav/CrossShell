@@ -25,6 +25,8 @@ class cmdProcessor:
         if cmd == "":
             return
             pass
+
+        cmd = cmd.lower()
         if cmd == "exit":
             exit(0)
             pass
