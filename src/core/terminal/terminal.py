@@ -5,6 +5,7 @@ from core.CrossShell import *
 class terminal:
     # Fields.
     CurrentPath = ""
+    SysShell = ""
 
     def __init__(self,currentPath):
         self.CurrentPath = currentPath
@@ -17,9 +18,8 @@ class terminal:
 
     # Get input.
     def getInput(self) -> str:
-        sys.stdout.write(CYAN)
-        print(self.CurrentPath + ">", end = '')
-        sys.stdout.write(RESET)
+        cprint(CYAN,self.CurrentPath + f">")
+        cprint(RED,self.SysShell + " ")
         val = input()
         return val
         pass

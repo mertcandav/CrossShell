@@ -27,6 +27,22 @@ class cmdProcessor:
             pass
 
         cmd = cmd.lower()
+        if cmd.startswith("$"):
+            if cmd == "$":
+                if term.SysShell == "":
+                    term.SysShell = "$"
+                    pass
+                else:
+                    term.SysShell = ""
+                    pass
+                return
+                pass
+            else:
+                os.system(cmd[1:])
+                pass
+            return
+            pass
+
         if cmd == "exit":
             exit(0)
             pass
@@ -42,8 +58,8 @@ class cmdProcessor:
         if cmd == "about":
             print(ABOUT)
             return
-            pass
         if cmd == "help":
+            pass
             print(HELP)
             return
             pass
@@ -68,7 +84,13 @@ class cmdProcessor:
             return
             pass
 
-        cprintln(RED,f"'{cmd}' command not recognized!")
+        if term.SysShell == "":
+            cprintln(RED,f"'{cmd}' command not recognized!")
+            pass
+        else:
+            os.system(cmd)
+            pass
+
         pass
 
     pass
