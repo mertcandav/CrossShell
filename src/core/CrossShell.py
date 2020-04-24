@@ -4,6 +4,14 @@ VERSION = "0.0.1"
 # Content of commands
 ABOUT = f"""CrossShell ~ [ Version: {VERSION} ]
 Copyright (c) 2020 Mertcan Davulcu"""
+HELP = """EXIT              Exit from CrossShell.
+ABOUT             Show about info of CrossShell.
+CLEAR             Clear the CLI screen.
+
+CD                Allows you to manage the current location.
+LS                This module allows you to list the contents of the location at the current location.
+NETINFO           This module is a module that allows you to get information about the network.
+SYSINFO           This module is a module that allows you to get information about the system."""
 
 # States
 ERROR = "$ERROR"
