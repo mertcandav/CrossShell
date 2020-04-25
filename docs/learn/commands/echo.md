@@ -1,4 +1,5 @@
 ``echo <string>``
+``echo <char>``
 
 This command sends a message to the screen. The message should be written in "String" type.
 
