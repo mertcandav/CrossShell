@@ -6,7 +6,7 @@ from core.functions.cd import *
 from core.functions.sysinfo import *
 from core.functions.netinfo import *
 from core.functions.ls import *
-from engine.shared.Eng_string import *
+from engine.values.Eng_string import *
 
 class cmdProcessor:
     @staticmethod
