@@ -9,6 +9,7 @@ EXIT              Exit from CrossShell.
 ABOUT             Show about info of CrossShell.
 CLEAR             Clear the CLI screen.
 
+ECHO              Show message on screen.
 CD                Allows you to manage the current location.
 LS                This module allows you to list the contents of the location at the current location.
 NETINFO           This module is a module that allows you to get information about the network.
