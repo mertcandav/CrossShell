@@ -6,6 +6,7 @@ from core.functions.cd import *
 from core.functions.sysinfo import *
 from core.functions.netinfo import *
 from core.functions.ls import *
+from engine.shared.Eng_str import *
 
 class cmdProcessor:
     @staticmethod
@@ -61,6 +62,14 @@ class cmdProcessor:
         if cmd == "help":
             pass
             print(HELP)
+            return
+            pass
+        if cmd.startswith("echo "):
+            val = Eng_str.process(cmdProcessor.readyCmd("echo ",cmd))
+            if val == ERROR:
+                return
+                pass
+            print(val)
             return
             pass
         if cmd.startswith("cd "):
