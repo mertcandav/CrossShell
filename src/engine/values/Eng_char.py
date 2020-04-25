@@ -2,18 +2,17 @@
 import re
 from core.CrossShell import *
 from core.terminal.terminal import *
-from engine.values.Eng_char import *
 
-class Eng_string:
+class Eng_char:
     @staticmethod
     def process(cmd: str):
         cmd = cmd.strip()
         if cmd == "":
-            cprintln(RED,"String is not defined!")
+            cprintln(RED,"Char is not defined!")
             return ERROR
             pass
-        if cmd.startswith('"') == False:
-            cprintln(RED,"String is not declare!")
+        if cmd.startswith("'") == False:
+            cprintln(RED,"Char is not declare!")
             return ERROR
             pass
 
@@ -26,13 +25,18 @@ class Eng_string:
                 cval = re.sub(escapes[key], "", cval, flags=re.MULTILINE|re.UNICODE)
                 pass
             
-            if cval.endswith('"') == False:
-                cprintln(RED,"String end is not declared!")
+            if cval.endswith("'") == False:
+                cprintln(RED,"Char end is not declared!")
                 return ERROR
                 pass
             
             cval = cval[0:cval.__len__()-1]
             
+            if cval.__len__() > 1:
+                cprintln(RED,"Char can be at most one character!")
+                return ERROR
+                pass
+
             for key in escapes_check:
                 if cval.find(key) != -1:
                     cprintln(RED, f"'{key}' invalid value!")
@@ -56,4 +60,17 @@ class Eng_string:
         pass
     pass
 
+escapes = {
+    "\\\\":   "\\\\\\\\",
+    "\"":   "\\\\\"",
+    "\'":   "\\\\\'",
+    "\n":   "\\\\n",
+    "\r":   "\\\\r",
+    "\t":   "\\\\t",
+    "\b":   "\\\\b",
+    "\f":   "\\\\f",
+    "\a":   "\\\\a",
+    "\v":   "\\\\v"
+}
 
+escapes_check = [ "\\", "\"" ]

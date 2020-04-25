@@ -65,7 +65,13 @@ class cmdProcessor:
             return
             pass
         if lcmd.startswith("echo "):
-            val = Eng_string.process(cmdProcessor.readyCmd("echo ",cmd))
+            val = cmdProcessor.readyCmd("echo ",cmd)
+            if val.startswith("'"):
+                val = Eng_char.process(val)
+                pass
+            else:
+                val = Eng_string.process(val)
+                pass
             if val == ERROR:
                 return
                 pass
