@@ -99,11 +99,17 @@ class cmdProcessor:
             return
             pass
 
+        dex = cmd.find(" ")
+        fcmd = cmd
+        if dex != -1:
+            fcmd = cmd[0:dex]
+            pass
+
         if term.SysShell == "":
-            cprintln(RED,f"'{lcmd}' command not recognized!")
+            cprintln(RED,f"'{fcmd}' command not recognized!")
             pass
         else:
-            os.system(lcmd)
+            os.system(cmd)
             pass
 
         pass
