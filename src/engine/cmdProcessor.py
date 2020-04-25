@@ -27,9 +27,9 @@ class cmdProcessor:
             return
             pass
 
-        cmd = cmd.lower()
-        if cmd.startswith("$"):
-            if cmd == "$":
+        lcmd = cmd.lower()
+        if lcmd.startswith("$"):
+            if lcmd == "$":
                 if term.SysShell == "":
                     term.SysShell = "$"
                     pass
@@ -39,15 +39,15 @@ class cmdProcessor:
                 return
                 pass
             else:
-                os.system(cmd[1:])
+                os.system(lcmd[1:])
                 pass
             return
             pass
 
-        if cmd == "exit":
+        if lcmd == "exit":
             exit(0)
             pass
-        if cmd == "clear":
+        if lcmd == "clear":
             if platform.system() == "Windows":
                 os.system("cls")
                 pass
@@ -56,15 +56,15 @@ class cmdProcessor:
                 pass
             return
             pass
-        if cmd == "about":
+        if lcmd == "about":
             print(ABOUT)
             return
-        if cmd == "help":
+        if lcmd == "help":
             pass
             print(HELP)
             return
             pass
-        if cmd.startswith("echo "):
+        if lcmd.startswith("echo "):
             val = Eng_string.process(cmdProcessor.readyCmd("echo ",cmd))
             if val == ERROR:
                 return
@@ -72,32 +72,32 @@ class cmdProcessor:
             print(val)
             return
             pass
-        if cmd.startswith("cd "):
-            cmd = cmdProcessor.readyCmd("cd ",cmd)
-            term.CurrentPath = func_cd.process(term.CurrentPath,cmd).__str__()
+        if lcmd.startswith("cd "):
+            lcmd = cmdProcessor.readyCmd("cd ",lcmd)
+            term.CurrentPath = func_cd.process(term.CurrentPath,lcmd).__str__()
             return
             pass
-        if cmd.startswith("sysinfo "):
-            cmd = cmdProcessor.readyCmd("sysinfo ",cmd)
-            func_sysinfo.process(cmd)
+        if lcmd.startswith("sysinfo "):
+            lcmd = cmdProcessor.readyCmd("sysinfo ",lcmd)
+            func_sysinfo.process(lcmd)
             return
             pass
-        if cmd.startswith("netinfo "):
-            cmd = cmdProcessor.readyCmd("netinfo ",cmd)
-            func_netinfo.process(cmd)
+        if lcmd.startswith("netinfo "):
+            lcmd = cmdProcessor.readyCmd("netinfo ",lcmd)
+            func_netinfo.process(lcmd)
             return
             pass
-        if cmd.startswith("ls"):
-            cmd = cmdProcessor.readyCmd("ls",cmd)
-            func_ls.process(term,cmd)
+        if lcmd.startswith("ls"):
+            lcmd = cmdProcessor.readyCmd("ls",lcmd)
+            func_ls.process(term,lcmd)
             return
             pass
 
         if term.SysShell == "":
-            cprintln(RED,f"'{cmd}' command not recognized!")
+            cprintln(RED,f"'{lcmd}' command not recognized!")
             pass
         else:
-            os.system(cmd)
+            os.system(lcmd)
             pass
 
         pass
