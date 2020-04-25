@@ -34,3 +34,9 @@ Result: ``My name is "Mertcan Davulcu"``
 
 + `\t`<br>
     ASCII Horizontal Tab
+
++ `\v`<br>
+    ASCII Vertical Tab
+
++ `\a`<br>
+    ASCII Bell
