@@ -46,5 +46,6 @@ if __name__ == "__main__":
     if platform.system() == "Windows":
         cmdProcessor.process(_terminal,"clear")
         pass
+    print(ABOUT + "\n")
     main()
     pass
