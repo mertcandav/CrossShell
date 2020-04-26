@@ -7,6 +7,7 @@ from core.functions.sysinfo import *
 from core.functions.netinfo import *
 from core.functions.ls import *
 from engine.values.Eng_string import *
+from core.functions.print import *
 
 class cmdProcessor:
     @staticmethod
@@ -91,6 +92,11 @@ class cmdProcessor:
         if lcmd.startswith("netinfo "):
             lcmd = cmdProcessor.readyCmd("netinfo ",lcmd)
             func_netinfo.process(lcmd)
+            return
+            pass
+        if lcmd.startswith("print "):
+            lcmd = cmdProcessor.readyCmd("print ",cmd)
+            func_print.process(term,lcmd)
             return
             pass
         if lcmd.startswith("ls"):

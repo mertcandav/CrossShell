@@ -20,14 +20,13 @@ class terminal:
     def getInput(self) -> str:
         cprint(CYAN,self.CurrentPath + f">")
         cprint(RED,self.SysShell + " ")
-        val = input()
+        val = input("")
         return val
         pass
 
     pass
 
 # Functions.
-
 def cprint(style,val: str):
     sys.stdout.write(style)
     print(val, end = '')
