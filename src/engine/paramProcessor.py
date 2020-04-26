@@ -5,6 +5,15 @@ from framework.cli import *
 
 class paramProcessor:
     @staticmethod
+    def removeParams(val: str) -> str:
+        dex = val.find(" -")
+        if dex != -1:
+            val = val[0:dex]
+            pass
+        return val
+        pass
+
+    @staticmethod
     def getParams(val: str) -> [str, list]:
         params = []
         while(val.find(" -") != -1):

@@ -15,11 +15,7 @@ class func_print:
             return
             pass
 
-        dex = cmd.find(" ")
-        cmd = cmd
-        if dex != -1:
-            cmd = cmd[0:dex]
-            pass
+        cmd = paramProcessor.removeParams(cmd)
 
         path = os.path.join(term.CurrentPath,cmd)
         if os.path.isfile(path) == False:
