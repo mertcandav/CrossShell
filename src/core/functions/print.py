@@ -31,7 +31,7 @@ class func_print:
                 print(
                     "print:\n"
                     "   -help: Show help of module. This parameter can only be used alone.\n"
-                    "   -ec:<string>: Encoding."
+                    "   -ec:<string>: Set encoding."
                 )
                 return
                 pass
