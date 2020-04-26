@@ -33,3 +33,8 @@ REVERSE = "\033[;7m"
 
 # External
 SysIntegrationMark = "$"
+
+# Dictionaries.
+errors = {
+    1:  "ffffff0x1"
+}

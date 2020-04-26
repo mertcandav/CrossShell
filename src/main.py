@@ -26,6 +26,7 @@ import sys
 import os
 import platform
 import json
+from core.CrossShell import *
 from core.terminal.terminal import *
 from engine.cmdProcessor import *
 from framework.fs import *
@@ -33,10 +34,18 @@ from framework.fs import *
 # Fields.
 term = terminal(os.getcwd())
 
+# Exit with error message and code.
+def exitwerr(err: str, code: int) -> None:
+    cprint(RED, f"Ops! An error has occurred!\nError: " +
+        err + RED + "\nCode: { " + YELLOW + errors[code] + RED + " }")
+    input("\n\nPress enter for close... ")
+    exit(code)
+    pass
+
 # Read CrossShellJSON.
 def process_CrossShellJSON() -> None:
     if os.path.exists("CrossShell.json") == False:
-        exit(1)
+        exitwerr("CrossShell.json not found!", 1)
         pass
 
     csjson = json.loads(fs.readAllText("CrossShell.json", "utf-8"))
