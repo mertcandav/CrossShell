@@ -9,6 +9,7 @@ from core.functions.netinfo import *
 from core.functions.pause import *
 from core.functions.ls import *
 from core.functions.print import *
+from core.functions.rmdir import *
 from engine.values.Eng_string import *
 from framework.fs import *
 from framework.cli import *
@@ -114,6 +115,11 @@ class cmdProcessor:
             pass
         if lcmd.startswith("ls"):
             func_ls.process(term,cmd)
+            return
+            pass
+        if lcmd.startswith("rmdir "):
+            lcmd = cmdProcessor.readyCmd("rmdir ",cmd)
+            func_rmdir.process(term,lcmd)
             return
             pass
 
