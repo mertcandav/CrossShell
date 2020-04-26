@@ -10,6 +10,7 @@ from core.functions.ls import *
 from engine.values.Eng_string import *
 from core.functions.print import *
 from framework.fs import *
+from framework.cli import *
 
 class cmdProcessor:
     @staticmethod

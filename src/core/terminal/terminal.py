@@ -1,6 +1,6 @@
 # Imports.
-import sys
 from core.CrossShell import *
+from framework.cli import *
 
 class terminal:
     # Fields.
@@ -24,17 +24,4 @@ class terminal:
         return val
         pass
 
-    pass
-
-# Functions.
-def cprint(style,val: str):
-    sys.stdout.write(style)
-    print(val, end = '')
-    sys.stdout.write(RESET)
-    pass
-
-def cprintln(style,val: str):
-    sys.stdout.write(style)
-    print(val)
-    sys.stdout.write(RESET)
     pass

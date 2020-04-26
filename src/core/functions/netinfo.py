@@ -1,11 +1,12 @@
 # Imports.
 import socket
 import os
+import uuid
 from core.CrossShell import *
 from engine.paramProcessor import paramProcessor
 from engine.moduleProcessor import moduleProcessor
 from core.terminal.terminal import *
-import uuid
+from framework.cli import *
 
 class func_netinfo:
     @staticmethod

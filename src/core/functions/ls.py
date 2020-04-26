@@ -3,6 +3,7 @@ import os
 from engine.paramProcessor import *
 from core.CrossShell import *
 from core.terminal.terminal import *
+from framework.cli import *
 
 class func_ls:
     @staticmethod

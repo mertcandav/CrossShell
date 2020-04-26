@@ -5,6 +5,7 @@ from core.CrossShell import *
 from engine.paramProcessor import paramProcessor
 from engine.moduleProcessor import moduleProcessor
 from core.terminal.terminal import *
+from framework.cli import *
 
 class func_sysinfo:
     @staticmethod

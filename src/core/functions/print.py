@@ -5,6 +5,7 @@ from engine.paramProcessor import paramProcessor
 from core.terminal.terminal import *
 from engine.values.Eng_string import *
 from framework.fs import *
+from framework.cli import *
 
 class func_print:
     @staticmethod

@@ -3,6 +3,7 @@ import os
 import shutil
 from pathlib import *
 from core.terminal.terminal import *
+from framework.cli import *
 
 class func_cd:
     @staticmethod
