@@ -1,3 +1,6 @@
+# Imports.
+import os
+
 class fs:
     @staticmethod
     def readAllText(path: str, encoding: str) -> str:
@@ -15,6 +18,20 @@ class fs:
         file = open(path, mode="w", encoding=encoding)
         file.write(content)
         file.close()
+        pass
+
+    @staticmethod
+    def getFiles(path: str) -> list:
+        dirs = os.listdir(path)
+        dirs = (val for val in dirs if os.path.isfile(val) == True)
+        return dirs
+        pass
+
+    @staticmethod
+    def getDirectories(path: str) -> list:
+        dirs = os.listdir(path)
+        dirs = (val for val in dirs if os.path.isdir(val) == True)
+        return dirs
         pass
 
     pass

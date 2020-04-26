@@ -113,8 +113,7 @@ class cmdProcessor:
             return
             pass
         if lcmd.startswith("ls"):
-            lcmd = cmdProcessor.readyCmd("ls",cmd)
-            func_ls.process(term,lcmd)
+            func_ls.process(term,cmd)
             return
             pass
 

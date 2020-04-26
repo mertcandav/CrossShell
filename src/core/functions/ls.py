@@ -3,12 +3,13 @@ import os
 from engine.paramProcessor import *
 from core.CrossShell import *
 from core.terminal.terminal import *
+from framework.fs import *
 from framework.cli import *
 
 class func_ls:
     @staticmethod
     def process(term: terminal,cmd: str) -> None:
-        if cmd == "":
+        if cmd == "ls":
             alldir = os.listdir(term.CurrentPath)
             dirs = (val for val in alldir if os.path.isdir(val) == True)
             files = (val for val in alldir if os.path.isfile(val) == True)
@@ -45,18 +46,14 @@ class func_ls:
         msg = ""
         for element in params:
             if element == "d":
-                alldir = os.listdir(term.CurrentPath)
-                dirs = (val for val in alldir if os.path.isdir(val) == True)
-                for val in dirs:
+                for val in fs.getDirectories(term.CurrentPath):
                     cprint(PURPLE,f"[DIR]")
                     cprintln(WHITE,val)
                     pass
                 continue
                 pass
             if element == "f":
-                alldir = os.listdir(term.CurrentPath)
-                dirs = (val for val in alldir if os.path.isfile(val) == True)
-                for val in dirs:
+                for val in fs.getFiles(term.CurrentPath):
                     cprint(BLUE,f"[FILE]")
                     cprintln(WHITE,val)
                     pass
