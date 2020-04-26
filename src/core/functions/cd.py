@@ -8,16 +8,17 @@ class func_cd:
     @staticmethod
     def process(path: str,cmd: str):
         pth = Path(path)
-        pth = pth.joinpath(cmd + "\\")
+        seperator = os.path.sep
+        pth = pth.joinpath(cmd + seperator)
         pthstr = pth.__str__()
-        parts = pthstr.split('\\')
-        pth = Path(parts[0] + "\\")
+        parts = pthstr.split(seperator)
+        pth = Path(parts[0] + seperator)
         for element in parts:
             if element == "..":
                 pth = pth.parent
                 continue
                 pass
-            pth = pth.joinpath(element + "\\")
+            pth = pth.joinpath(element + seperator)
             pass
         pthstr = pth.__str__()
         if os.path.isdir(pthstr) == False | os.path.exists(pthstr) == False:
