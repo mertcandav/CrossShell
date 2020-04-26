@@ -5,7 +5,7 @@ from core.terminal.terminal import *
 
 class Eng_char:
     @staticmethod
-    def process(cmd: str):
+    def process(cmd: str) -> str:
         cmd = cmd.strip()
         if cmd == "":
             cprintln(RED,"Char is not defined!")
@@ -19,7 +19,7 @@ class Eng_char:
         val = cmd[1:]
 
         # Control.
-        def control():
+        def control() -> str:
             cval = val
             for key in escapes:
                 cval = re.sub(escapes[key], "", cval, flags=re.MULTILINE|re.UNICODE)

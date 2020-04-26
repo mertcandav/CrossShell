@@ -5,7 +5,7 @@ from framework.cli import *
 
 class moduleProcessor:
     @staticmethod
-    def checkParams(params: list,max = None):
+    def checkParams(params: list,max = None) -> str:
         if max == None:
             if params.__len__() < 0:
                 cprintln(RED,"At least one parameter must be declared in the modules!")

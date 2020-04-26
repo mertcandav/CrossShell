@@ -9,7 +9,7 @@ from framework.cli import *
 
 class func_sysinfo:
     @staticmethod
-    def process(cmd: str):
+    def process(cmd: str) -> None:
         params = paramProcessor.getParams(cmd)
         if params == ERROR:
             return

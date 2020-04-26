@@ -6,7 +6,7 @@ from engine.values.Eng_char import *
 
 class Eng_string:
     @staticmethod
-    def process(cmd: str):
+    def process(cmd: str) -> str:
         cmd = cmd.strip()
         if cmd == "":
             cprintln(RED,"String is not defined!")

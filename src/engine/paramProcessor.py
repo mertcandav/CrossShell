@@ -5,7 +5,7 @@ from framework.cli import *
 
 class paramProcessor:
     @staticmethod
-    def getParams(val: str):
+    def getParams(val: str) -> [str, list]:
         params = []
         while(val.find(" -") != -1):
             dex = val.find("-")

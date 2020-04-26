@@ -7,7 +7,7 @@ from framework.cli import *
 
 class func_ls:
     @staticmethod
-    def process(term: terminal,cmd: str):
+    def process(term: terminal,cmd: str) -> None:
         if cmd == "":
             alldir = os.listdir(term.CurrentPath)
             dirs = (val for val in alldir if os.path.isdir(val) == True)

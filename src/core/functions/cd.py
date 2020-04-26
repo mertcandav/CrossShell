@@ -7,7 +7,7 @@ from framework.cli import *
 
 class func_cd:
     @staticmethod
-    def process(path: str,cmd: str):
+    def process(path: str,cmd: str) -> str:
         pth = Path(path)
         seperator = os.path.sep
         pth = pth.joinpath(cmd + seperator)
@@ -24,10 +24,9 @@ class func_cd:
         pthstr = pth.__str__()
         if os.path.isdir(pthstr) == False | os.path.exists(pthstr) == False:
             cprintln(RED,"There is no directory with this name!")
-            return pth.parent
+            return pth.parent.__str__()
             pass
         return pthstr[0:pthstr.__len__()]
         pass
-    pass
 
     pass

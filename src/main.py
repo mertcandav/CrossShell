@@ -34,7 +34,7 @@ from framework.fs import *
 term = terminal(os.getcwd())
 
 # Read CrossShellJSON.
-def process_CrossShellJSON():
+def process_CrossShellJSON() -> None:
     if os.path.exists("CrossShell.json") == False:
         exit(1)
         pass
@@ -49,7 +49,7 @@ def process_CrossShellJSON():
     pass
 
 # Entry Point.
-def main():
+def main() -> None:
     # Command input loop.
     while True:
         _input = cmdProcessor.clearCmd(term.getInput())

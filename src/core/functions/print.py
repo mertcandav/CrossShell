@@ -9,7 +9,7 @@ from framework.cli import *
 
 class func_print:
     @staticmethod
-    def process(term: terminal, cmd: str):
+    def process(term: terminal, cmd: str) -> None:
         params = paramProcessor.getParams(cmd)
         if params == ERROR:
             return
