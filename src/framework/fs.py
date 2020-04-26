@@ -9,4 +9,12 @@ class fs:
         file.close()
         return content
         pass
+
+    @staticmethod
+    def writeAllText(path: str, content: str, encoding: str) -> None:
+        file = open(path, mode="w", encoding=encoding)
+        file.write(content)
+        file.close()
+        pass
+
     pass

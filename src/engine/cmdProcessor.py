@@ -1,6 +1,7 @@
 # Imports.
 import platform
 import os
+import json
 from core.terminal.terminal import *
 from core.functions.cd import *
 from core.functions.sysinfo import *
@@ -8,6 +9,7 @@ from core.functions.netinfo import *
 from core.functions.ls import *
 from engine.values.Eng_string import *
 from core.functions.print import *
+from framework.fs import *
 
 class cmdProcessor:
     @staticmethod
@@ -29,14 +31,18 @@ class cmdProcessor:
             pass
 
         lcmd = cmd.lower()
-        if lcmd.startswith("$"):
-            if lcmd == "$":
+        if lcmd.startswith(SysIntegrationMark):
+            if lcmd == SysIntegrationMark:
+                csjson = json.loads(fs.readAllText("CrossShell.json", "utf-8"))
                 if term.SysShell == "":
-                    term.SysShell = "$"
+                    term.SysShell = SysIntegrationMark
+                    csjson["settings"]["SysIntegration"] = True
                     pass
                 else:
                     term.SysShell = ""
+                    csjson["settings"]["SysIntegration"] = False
                     pass
+                fs.writeAllText("CrossShell.json", json.dumps(csjson, indent=4), "utf-8")
                 return
                 pass
             else:

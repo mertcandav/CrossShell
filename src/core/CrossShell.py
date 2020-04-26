@@ -30,3 +30,6 @@ YELLOW  = '\033[33m'
 PURPLE  = '\033[35m'
 BOLD    = "\033[;1m"
 REVERSE = "\033[;7m"
+
+# External
+SysIntegrationMark = "$"

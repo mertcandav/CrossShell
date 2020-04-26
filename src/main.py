@@ -25,27 +25,45 @@
 import sys
 import os
 import platform
+import json
 from core.terminal.terminal import *
 from engine.cmdProcessor import *
+from framework.fs import *
 
 # Fields.
-_terminal = terminal(os.getcwd())
+term = terminal(os.getcwd())
 
-# Entry Point
+# Read CrossShellJSON.
+def process_CrossShellJSON():
+    if os.path.exists("CrossShell.json") == False:
+        exit(1)
+        pass
+
+    csjson = json.loads(fs.readAllText("CrossShell.json", "utf-8"))
+
+    # System Shell Integration
+    if csjson["settings"]["SysIntegration"] == True:
+        term.SysShell = "$"
+        pass
+
+    pass
+
+# Entry Point.
 def main():
     # Command input loop.
     while True:
-        _input = cmdProcessor.clearCmd(_terminal.getInput())
-        cmdProcessor.process(_terminal,_input)
+        _input = cmdProcessor.clearCmd(term.getInput())
+        cmdProcessor.process(term,_input)
         pass
     pass
 
-# Main point
+# Main point.
 if __name__ == "__main__":
     sys.stdout.write("\x1b]2;CrossShell\x07")
     if platform.system() == "Windows":
-        cmdProcessor.process(_terminal,"clear")
+        cmdProcessor.process(term,"clear")
         pass
     print(ABOUT + "\n")
+    process_CrossShellJSON()
     main()
     pass
