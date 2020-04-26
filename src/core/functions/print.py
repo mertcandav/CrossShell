@@ -36,7 +36,8 @@ class func_print:
                 return
                 pass
 
-            cprintln(RED,"Not exists")
+            cprintln(RED,"There is no such file in this directory!")
+            return
             pass
         
         msg = ""

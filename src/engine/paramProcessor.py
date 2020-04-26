@@ -6,7 +6,7 @@ class paramProcessor:
     @staticmethod
     def getParams(val: str):
         params = []
-        while(val.find("-") != -1):
+        while(val.find(" -") != -1):
             dex = val.find("-")
             if dex+1 == val.__len__():
                 cprintln(RED,"The parameter must be defined after the parameter declaration!")
