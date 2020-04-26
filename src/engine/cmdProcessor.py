@@ -80,17 +80,17 @@ class cmdProcessor:
             return
             pass
         if lcmd.startswith("cd "):
-            lcmd = cmdProcessor.readyCmd("cd ",lcmd)
+            lcmd = cmdProcessor.readyCmd("cd ",cmd)
             term.CurrentPath = func_cd.process(term.CurrentPath,lcmd).__str__()
             return
             pass
         if lcmd.startswith("sysinfo "):
-            lcmd = cmdProcessor.readyCmd("sysinfo ",lcmd)
+            lcmd = cmdProcessor.readyCmd("sysinfo ",cmd)
             func_sysinfo.process(lcmd)
             return
             pass
         if lcmd.startswith("netinfo "):
-            lcmd = cmdProcessor.readyCmd("netinfo ",lcmd)
+            lcmd = cmdProcessor.readyCmd("netinfo ",cmd)
             func_netinfo.process(lcmd)
             return
             pass
@@ -100,7 +100,7 @@ class cmdProcessor:
             return
             pass
         if lcmd.startswith("ls"):
-            lcmd = cmdProcessor.readyCmd("ls",lcmd)
+            lcmd = cmdProcessor.readyCmd("ls",cmd)
             func_ls.process(term,lcmd)
             return
             pass
