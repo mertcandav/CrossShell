@@ -40,3 +40,10 @@ sysinfo -cpu -cpuc -rls
 ```
 sysinfo -cpu -rls -cpuc -node
 ```
+#
+Some parameters may have parameters in themselves. A parameter with a parameter declares parameters with ``:`` at startup.
+
+For example, the ``-ec: <string>`` parameter of the ``print`` module is written like this`:
+```
+print Notes.txt -ec:"utf-8"
+```
