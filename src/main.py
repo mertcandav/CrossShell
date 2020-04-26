@@ -61,8 +61,15 @@ def process_CrossShellJSON() -> None:
 def main() -> None:
     # Command input loop.
     while True:
-        _input = cmdProcessor.clearCmd(term.getInput())
-        cmdProcessor.process(term,_input)
+        try:
+            _input = cmdProcessor.clearCmd(term.getInput())
+            cmdProcessor.process(term,_input)
+            pass
+        except Exception:
+            for error in sys.exc_info():
+                cprintln(RED, error)
+                pass
+            pass
         pass
     pass
 
