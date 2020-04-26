@@ -1,4 +1,5 @@
 # Imports.
+import platform
 from core.CrossShell import *
 from framework.cli import *
 
@@ -18,6 +19,9 @@ class terminal:
 
     # Get input.
     def getInput(self) -> str:
+        if platform.system() == "Linux":
+            import readline
+            pass
         cprint(CYAN,self.CurrentPath + f">")
         cprint(RED,self.SysShell + " ")
         val = input("")
