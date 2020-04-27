@@ -6,7 +6,7 @@ from framework.cli import *
 class paramProcessor:
     @staticmethod
     def removeParams(val: str) -> str:
-        dex = val.find(" -")
+        dex = val.find("-")
         if dex != -1:
             val = val[0:dex]
             pass
@@ -16,7 +16,7 @@ class paramProcessor:
     @staticmethod
     def getParams(val: str) -> [str, list]:
         params = []
-        while(val.find(" -") != -1):
+        while(val.find("-") != -1):
             dex = val.find("-")
             if dex+1 == val.__len__():
                 cprintln(RED,"The parameter must be defined after the parameter declaration!")

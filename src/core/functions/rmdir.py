@@ -3,7 +3,8 @@ import os
 import re
 from engine.paramProcessor import *
 from engine.values.Eng_string import *
-from core.terminal.terminal import *
+from core.terminal.CS_SHELL import *
+from core.terminal import terminal
 from core.CrossShell import *
 from framework.fs import *
 from framework.cli import *

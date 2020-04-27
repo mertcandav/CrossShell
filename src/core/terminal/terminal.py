@@ -1,15 +1,17 @@
 # Imports.
-import platform
 from core.CrossShell import *
+from core.terminal.CS_SHELL import *
 from framework.cli import *
 
 class terminal:
     # Fields.
     CurrentPath = ""
     SysShell = ""
+    Shell = CS_SHELL()
 
-    def __init__(self,currentPath):
+    def __init__(self, currentPath):
         self.CurrentPath = currentPath
+        self.Shell.term = self
         pass
 
     # Set current path.
@@ -18,14 +20,9 @@ class terminal:
         pass
 
     # Get input.
-    def getInput(self) -> str:
-        if platform.system() == "Linux":
-            import readline
-            pass
-        cprint(CYAN,self.CurrentPath + f">")
-        cprint(RED,self.SysShell + " ")
-        val = input("")
-        return val
+    def startLoop(self) -> str:
+        self.Shell.prompt = CYAN + self.CurrentPath + f">" + RED + self.SysShell + " " + RESET
+        self.Shell.cmdloop()
         pass
 
     pass

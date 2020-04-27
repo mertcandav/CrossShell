@@ -27,12 +27,12 @@ import os
 import platform
 import json
 from core.CrossShell import *
-from core.terminal.terminal import *
+from core.terminal import terminal
 from engine.cmdProcessor import *
 from framework.fs import *
 
 # Fields.
-term = terminal(os.getcwd())
+term = terminal.terminal(os.getcwd())
 
 # Exit with error message and code.
 def exitwerr(err: str, code: int) -> None:
@@ -62,8 +62,7 @@ def main() -> None:
     # Command input loop.
     while True:
         try:
-            _input = cmdProcessor.clearCmd(term.getInput())
-            cmdProcessor.process(term,_input)
+            term.startLoop()
             pass
         except Exception:
             for error in sys.exc_info():

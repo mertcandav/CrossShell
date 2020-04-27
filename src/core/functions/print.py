@@ -2,7 +2,7 @@
 import os
 from core.CrossShell import *
 from engine.paramProcessor import paramProcessor
-from core.terminal.terminal import *
+from core.terminal import terminal
 from engine.values.Eng_string import *
 from framework.fs import *
 from framework.cli import *

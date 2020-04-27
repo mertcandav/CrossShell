@@ -3,6 +3,7 @@ import re
 from core.CrossShell import *
 from core.terminal.terminal import *
 from engine.values.Eng_char import *
+from framework.cli import *
 
 class Eng_string:
     @staticmethod
