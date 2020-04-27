@@ -8,12 +8,17 @@ HELP = """HELP              Show help of CrossShell commands.
 EXIT              Exit from CrossShell.
 ABOUT             Show about info of CrossShell.
 CLEAR             Clear the CLI screen.
-
+PAUSE             This module stops inputting commands until you press the ``enter`` key.
 ECHO              Show message on screen.
+
+$                 Use and manage system shell integration.
+
 CD                Allows you to manage the current location.
 LS                This module allows you to list the contents of the location at the current location.
 NETINFO           This module is a module that allows you to get information about the network.
-SYSINFO           This module is a module that allows you to get information about the system."""
+SYSINFO           This module is a module that allows you to get information about the system.
+PRINT             This module reads and displays the contents of the specified file.
+RMDIR             This module is a module that allows you to delete directories."""
 
 # States
 ERROR = "$ERROR"
