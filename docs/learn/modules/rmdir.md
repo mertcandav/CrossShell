@@ -21,4 +21,7 @@ When you enable regular expression queries, you can delete with regular expressi
 
 + ``-rgx``<br>
     Use regular expressions.
+
++ ``-tree``<br>
+    Include child items.
     

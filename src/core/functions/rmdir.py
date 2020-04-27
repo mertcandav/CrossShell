@@ -1,6 +1,7 @@
 # Imports.
 import os
 import re
+import shutil
 from engine.paramProcessor import *
 from engine.values.Eng_string import *
 from core.terminal.CS_SHELL import *
@@ -12,7 +13,7 @@ from framework.cli import *
 class func_rmdir:
     @staticmethod
     def process(term: terminal, cmd: str) -> None:
-        params = paramProcessor.getParams(paramProcessor.removeNonParam(cmd))
+        params = paramProcessor.getParams(" " + paramProcessor.removeNonParam(cmd))
         if params == ERROR:
             return
             pass
@@ -26,7 +27,8 @@ class func_rmdir:
             print(
                 "rmdir:\n"
                 "   -help: Show help of module. This parameter can only be used alone.\n"
-                "   -rgx: Use regular expressions."
+                "   -rgx: Use regular expressions.\n"
+                "   -tree: Include child items."
             )
             return
             pass
@@ -39,9 +41,15 @@ class func_rmdir:
 
         msg = ""
         regex = False
+        tree = False
+        print(params.__len__().__str__())
         for element in params:
             if element.startswith("rgx"):
                 regex = True
+                continue
+                pass
+            if element.startswith("tree"):
+                tree = True
                 continue
                 pass
 
@@ -57,12 +65,22 @@ class func_rmdir:
                     if re.match(cmd, _dir) == False:
                         continue
                         pass
-
-                    os.rmdir(_dir)
+                    
+                    if tree:
+                        shutil.rmtree(_dir)
+                        pass
+                    else:
+                        os.rmdir(_dir)
+                        pass
                     pass
                 pass
             else:
-                os.rmdir(cmd)
+                if tree:
+                    shutil.rmtree(cmd)
+                    pass
+                else:
+                    os.rmdir(cmd)
+                    pass
                 pass
             return
             pass
