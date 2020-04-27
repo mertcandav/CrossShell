@@ -8,11 +8,11 @@ from framework.cli import *
 
 class func_ls:
     @staticmethod
-    def process(term: terminal,cmd: str) -> None:
+    def process(term: terminal, cmd: str) -> None:
         if cmd == "":
             alldir = os.listdir(term.CurrentPath)
-            dirs = (val for val in alldir if os.path.isdir(val) == True)
-            files = (val for val in alldir if os.path.isfile(val) == True)
+            dirs = fs.getDirectories(term.CurrentPath)
+            files = fs.getFiles(term.CurrentPath)
             for val in dirs:
                 cprint(PURPLE,f"[DIR]")
                 cprintln(WHITE,val)
