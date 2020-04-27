@@ -12,7 +12,7 @@ from framework.cli import *
 class func_rmdir:
     @staticmethod
     def process(term: terminal, cmd: str) -> None:
-        params = paramProcessor.getParams(cmd)
+        params = paramProcessor.getParams(paramProcessor.removeNonParam(cmd))
         if params == ERROR:
             return
             pass
@@ -31,7 +31,7 @@ class func_rmdir:
             return
             pass
         
-        cmd = paramProcessor.removeParams(cmd)
+        cmd = paramProcessor.getNonParam(cmd)
         cmd = Eng_string.process(cmd)
         if cmd == ERROR:
             return

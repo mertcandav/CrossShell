@@ -1,4 +1,5 @@
 # Imports.
+import re
 from core.CrossShell import *
 from core.terminal.terminal import *
 from framework.cli import *
@@ -6,7 +7,28 @@ from framework.cli import *
 class paramProcessor:
     @staticmethod
     def removeParams(val: str) -> str:
-        dex = val.find("-")
+        pattern = "-"
+        dex = val.find(pattern)
+        if dex != -1:
+            val = val[0:dex]
+            pass
+        return val
+        pass
+
+    @staticmethod
+    def removeNonParam(val: str) -> str:
+        pattern = " "
+        dex = val.find(pattern)
+        if dex != -1:
+            val = val[dex+1:]
+            pass
+        return val
+        pass
+
+    @staticmethod
+    def getNonParam(val: str) -> str:
+        pattern = " "
+        dex = val.find(pattern)
         if dex != -1:
             val = val[0:dex]
             pass
@@ -16,8 +38,9 @@ class paramProcessor:
     @staticmethod
     def getParams(val: str) -> [str, list]:
         params = []
-        while(val.find("-") != -1):
-            dex = val.find("-")
+        pattern = " -"
+        while(val.find(pattern) != -1):
+            dex = val.find(pattern)
             if dex+1 == val.__len__():
                 cprintln(RED,"The parameter must be defined after the parameter declaration!")
                 return ERROR
