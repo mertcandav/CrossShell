@@ -40,7 +40,7 @@ class paramProcessor:
         params = []
         pattern = " -"
         while(val.find(pattern) != -1):
-            dex = val.find(pattern)
+            dex = val.find("-")
             if dex+1 == val.__len__():
                 cprintln(RED,"The parameter must be defined after the parameter declaration!")
                 return ERROR
@@ -59,11 +59,12 @@ class paramProcessor:
                     param = val[dex+1:spacedex]
                     pass
                 pass
-            
+
             if param in params:
                 cprintln(RED,"A parameter cannot be defined more than once!")
                 return ERROR
                 pass
+
             params.append(param)
             val = val[spacedex:]
             if spacedex == -1:
