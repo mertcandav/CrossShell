@@ -48,7 +48,10 @@ class CS_SHELL(Cmd):
         pass
 
     def do_help(self, args: str) -> None:
-        print(HELP)
+        for key in HELP.keys():
+            value = HELP[key]
+            print(f"{GREEN}{key}{WHITE}{value}")
+            pass
         pass
 
     def do_echo(self, args: str) -> None:

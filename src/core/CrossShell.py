@@ -4,21 +4,6 @@ VERSION = "0.0.1"
 # Content of commands
 ABOUT = f"""CrossShell ~ [ Version: {VERSION} ]
 Copyright (c) 2020 Mertcan Davulcu"""
-HELP = """HELP              Show help of CrossShell commands.
-EXIT              Exit from CrossShell.
-ABOUT             Show about info of CrossShell.
-CLEAR             Clear the CLI screen.
-PAUSE             This module stops inputting commands until you press the ``enter`` key.
-ECHO              Show message on screen.
-
-$                 Use and manage system shell integration.
-
-CD                Allows you to manage the current location.
-LS                This module allows you to list the contents of the location at the current location.
-NETINFO           This module is a module that allows you to get information about the network.
-SYSINFO           This module is a module that allows you to get information about the system.
-PRINT             This module reads and displays the contents of the specified file.
-RMDIR             This module is a module that allows you to delete directories."""
 
 # States
 ERROR = "$ERROR"
@@ -40,6 +25,22 @@ REVERSE = "\033[;7m"
 SysIntegrationMark = "$"
 
 # Dictionaries.
+HELP = {
+    "help":              "                            Show help of CrossShell commands.",
+    "exit":              "                            Exit from CrossShell.",
+    "about":             "                           Show about info of CrossShell.",
+    "clear":             "                           Clear the CLI screen.",
+    "pause":             "                           This module stops inputting commands until you press the ``enter`` key.",
+    "echo":              "                            Show message on screen.\n",
+    "$":                 "                               Use and manage system shell integration.\n",
+    "cd":                "                              Allows you to manage the current location.",
+    "ls":                "                              This module allows you to list the contents of the location at the current location.",
+    "netinfo":           "                         This module is a module that allows you to get information about the network.",
+    "sysinfo":           "                         This module is a module that allows you to get information about the system.",
+    "print":             "                           This module reads and displays the contents of the specified file.",
+    "rmdir":             "                           This module is a module that allows you to delete directories."
+}
+
 errors = {
     1:  "ffffff0x1"
 }
