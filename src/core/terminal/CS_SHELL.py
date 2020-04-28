@@ -13,6 +13,7 @@ from core.functions.pause import *
 from core.functions.ls import *
 from core.functions.print import *
 from core.functions.rmdir import *
+from core.functions.rmtree import *
 from engine.values.Eng_string import *
 from engine.values.Eng_char import *
 from core.CrossShell import *
@@ -96,6 +97,10 @@ class CS_SHELL(Cmd):
 
     def do_rmdir(self, args: str) -> None:
         func_rmdir.process(self.term, args)
+        pass
+
+    def do_rmtree(self, args: str) -> None:
+        func_rmtree.process(self.term, args)
         pass
 
     def default(self, line: str) -> None:
