@@ -49,8 +49,9 @@ HELP = {
     "netinfo":           "                         This module is a module that allows you to get information about the network.",
     "sysinfo":           "                         This module is a module that allows you to get information about the system.",
     "print":             "                           This module reads and displays the contents of the specified file.",
+    "mkdir":             "                           This module is a module that allows you to create directories.",
     "rmdir":             "                           This module is a module that allows you to delete directories.",
-    "rmtree":             "                          This module is a module that allows you to delete directories and childs."
+    "rmtree":            "                          This module is a module that allows you to delete directories and childs."
 }
 
 errors = {
