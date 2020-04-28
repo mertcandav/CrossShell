@@ -42,7 +42,6 @@ f"   {NGREEN}-tree{WHITE}                    Include child items."
         msg = ""
         regex = False
         tree = False
-        print(params.__len__().__str__())
         for element in params:
             if element.startswith("rgx"):
                 regex = True
