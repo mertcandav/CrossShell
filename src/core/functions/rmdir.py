@@ -74,11 +74,12 @@ f"   {NGREEN}-tree{WHITE}                    Include child items."
                     pass
                 pass
             else:
+                path = os.path.join(term.CurrentPath, cmd)
                 if tree:
-                    shutil.rmtree(cmd)
+                    shutil.rmtree(path)
                     pass
                 else:
-                    os.rmdir(cmd)
+                    os.rmdir(path)
                     pass
                 pass
             return

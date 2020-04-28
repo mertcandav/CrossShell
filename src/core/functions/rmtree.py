@@ -63,7 +63,8 @@ f"   {NGREEN}-rgx{WHITE}                     Use regular expressions."
                     pass
                 pass
             else:
-                shutil.rmtree(cmd)
+                path = os.path.join(term.CurrentPath, cmd)
+                shutil.rmtree(path)
                 pass
             return
             pass
