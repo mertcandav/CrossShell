@@ -15,9 +15,7 @@ class func_print:
             return
             pass
 
-        cmd = paramProcessor.removeParams(cmd)
-
-        path = os.path.join(term.CurrentPath,cmd)
+        path = os.path.join(term.CurrentPath, paramProcessor.removeParams(cmd))
         if os.path.isfile(path) == False:
             if params.__len__() > 1 & params.count("help") > 0:
                 cprintln(RED,"The -help parameter can only be used alone!")
