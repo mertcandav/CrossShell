@@ -9,6 +9,11 @@ class func_cd:
     @staticmethod
     def process(path: str,cmd: str) -> str:
         pth = Path(path)
+        if cmd == "":
+            cprintln(WHITE,path)
+            return path
+            pass
+        
         seperator = os.path.sep
         pth = pth.joinpath(cmd + seperator)
         pthstr = pth.__str__()
