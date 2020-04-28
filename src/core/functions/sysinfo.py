@@ -10,7 +10,7 @@ from framework.cli import *
 class func_sysinfo:
     @staticmethod
     def process(cmd: str) -> None:
-        params = paramProcessor.getParams(cmd)
+        params = paramProcessor.getParams(" " + cmd)
         if params == ERROR:
             return
             pass
@@ -59,27 +59,27 @@ f"{NGREEN}CPU~Cores{WHITE}                   {platform.os.cpu_count().__str__()}
                 continue
                 pass
             if element == "ver":
-                msg += f"{NGREEN}Version{WHITE}                    {platform.version()}\n"
+                msg += f"{NGREEN}Version{WHITE}                     {platform.version()}\n"
                 continue
                 pass
             if element == "rls":
-                msg += f"{NGREEN}Release{WHITE}                    {platform.release()}\n"
+                msg += f"{NGREEN}Release{WHITE}                     {platform.release()}\n"
                 continue
                 pass
             if element == "node":
-                msg += f"{NGREEN}Node{WHITE}                    {platform.node()}\n"
+                msg += f"{NGREEN}Node{WHITE}                        {platform.node()}\n"
                 continue
                 pass
             if element == "machine":
-                msg += f"{NGREEN}Machine{WHITE}                    {platform.machine()}\n"
+                msg += f"{NGREEN}Machine{WHITE}                     {platform.machine()}\n"
                 continue
                 pass
             if element == "cpu":
-                msg += f"{NGREEN}CPU{WHITE}                    {platform.processor()}\n"
+                msg += f"{NGREEN}CPU{WHITE}                         {platform.processor()}\n"
                 continue
                 pass
             if element == "cpuc":
-                msg += f"{NGREEN}CPU~Cores{WHITE}{platform.os.cpu_count().__str__()}\n"
+                msg += f"{NGREEN}CPU~Cores{WHITE}                   {platform.os.cpu_count().__str__()}\n"
                 continue
                 pass
 
