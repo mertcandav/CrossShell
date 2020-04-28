@@ -3,6 +3,7 @@ import sys
 import os
 import platform
 import json
+import subprocess
 import cmd
 from cmd import *
 from engine.paramProcessor import *
@@ -126,7 +127,7 @@ class CS_SHELL(Cmd):
                 return
                 pass
             else:
-                os.system(line[1:])
+                subprocess.call(line[1:], shell=True, cwd=self.term.CurrentPath)
                 pass
             return
             pass
@@ -136,7 +137,7 @@ class CS_SHELL(Cmd):
             cprintln(RED,f"'{line}' command not recognized!")
             pass
         else:
-            os.system(line)
+            subprocess.call(line, shell=True, cwd=self.term.CurrentPath)
             pass
         pass
 
