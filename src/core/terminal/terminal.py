@@ -21,7 +21,7 @@ class terminal:
 
     # Get input.
     def startLoop(self) -> str:
-        self.Shell.prompt = CYAN + self.CurrentPath + f">" + RED + self.SysShell + " " + RESET
+        self.Shell.Update()
         self.Shell.cmdloop()
         pass
 

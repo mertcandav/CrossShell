@@ -35,10 +35,10 @@ class func_ls:
 
         if cmd == "-help":
             print(
-                "ls:\n"
-                "   -help: Show help of module. This parameter can only be used alone.\n"
-                "   -d: Show directories.\n"
-                "   -f: Show files."
+                f"{CYAN}ls{RESET}\n"
+f"   {NGREEN}-help{WHITE}                    Show help of module. This parameter can only be used alone.\n"
+f"   {NGREEN}-d{WHITE}                       Show directories.\n"
+f"   {NGREEN}-f{WHITE}                       Show files."
             )
             return
             pass
@@ -54,7 +54,7 @@ class func_ls:
                 pass
             if element == "f":
                 for val in fs.getFiles(term.CurrentPath):
-                    cprint(BLUE,f"[FILE]")
+                    cprint(CYAN,f"[FILE]")
                     cprintln(WHITE,val)
                     pass
                 continue

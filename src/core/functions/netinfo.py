@@ -28,35 +28,35 @@ class func_netinfo:
 
         if cmd == "-help":
             print(
-                "netinfo:\n"
-                "   -help: Show help of module. This parameter can only be used alone.\n"
-                "   -all: Show all informations of network. This parameter can only be used alone.\n"
-                "   -hostname: Show hostname.\n"
-                "   -ip: Show IPv4 address.\n"
-                "   -mac: Show physical address."
+                f"{CYAN}netinfo{RESET}\n"
+f"   {NGREEN}-help{WHITE}                    Show help of module. This parameter can only be used alone.\n"
+f"   {NGREEN}-all{WHITE}                     Show all informations of network. This parameter can only be used alone.\n"
+f"   {NGREEN}-hostname{WHITE}                Show hostname.\n"
+f"   {NGREEN}-ip{WHITE}                      Show IPv4 address.\n"
+f"   {NGREEN}-mac{WHITE}                     Show physical address."
             )
             return
             pass
         if cmd == "-all":
             print(
-                "Hostname: " + socket.gethostname() + "\n"
-                "IPv4 Address: " + socket.gethostbyname(socket.gethostname()) + "\n"
-                "Physical Address: " + ':'.join(("%012X" % uuid.getnode()) [i:i+2] for i in range(0,12,2))
+f"{NGREEN}Hostname{WHITE}                    {socket.gethostname()}\n"
+f"{NGREEN}IPv4 Address{WHITE}                {socket.gethostbyname(socket.gethostname())}\n"
+f"{NGREEN}Physical Address{WHITE}            " + ':'.join(("%012X" % uuid.getnode()) [i:i+2] for i in range(0,12,2))
             )
             return
             pass
         msg = ""
         for element in params:
             if element == "hostname":
-                msg += "Hostname: " + socket.gethostname() + "\n"
+                msg += f"{NGREEN}Hostname{WHITE}                    {socket.gethostname()}\n"
                 continue
                 pass
             if element == "ip":
-                msg += "IPv4 Address: " + socket.gethostbyname(socket.gethostname()) + "\n"
+                msg += f"{NGREEN}IPv4 Address{WHITE}                    {socket.gethostbyname(socket.gethostname())}\n"
                 continue
                 pass
             if element == "mac":
-                msg += "Physical Address: " + ':'.join(("%012X" % uuid.getnode()) [i:i+2] for i in range(0,12,2)) + "\n"
+                msg += f"{NGREEN}Physical Address{WHITE}                    " + ':'.join(("%012X" % uuid.getnode()) [i:i+2] for i in range(0,12,2)) + "\n"
                 continue
                 pass
 

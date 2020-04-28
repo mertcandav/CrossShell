@@ -24,7 +24,7 @@ class CS_SHELL(Cmd):
     term = None
 
     def Update(self) -> None:
-        self.prompt = CYAN + self.term.CurrentPath + f">" + RED + self.term.SysShell + " " + RESET
+        self.prompt = f"{BLUE}{self.term.CurrentPath}>{RED}{self.term.SysShell} {RESET}"
         pass
 
     #########################################################
@@ -50,7 +50,7 @@ class CS_SHELL(Cmd):
     def do_help(self, args: str) -> None:
         for key in HELP.keys():
             value = HELP[key]
-            print(f"{GREEN}{key}{WHITE}{value}")
+            print(f"{NGREEN}{key}{WHITE}{value}")
             pass
         pass
 

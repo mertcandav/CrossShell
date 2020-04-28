@@ -25,10 +25,10 @@ class func_rmdir:
 
         if cmd == "-help":
             print(
-                "rmdir:\n"
-                "   -help: Show help of module. This parameter can only be used alone.\n"
-                "   -rgx: Use regular expressions.\n"
-                "   -tree: Include child items."
+                f"{CYAN}rmdir{RESET}\n"
+f"   {NGREEN}-help{WHITE}                    Show help of module. This parameter can only be used alone.\n"
+f"   {NGREEN}-rgx{WHITE}                     Use regular expressions.\n"
+f"   {NGREEN}-tree{WHITE}                    Include child items."
             )
             return
             pass

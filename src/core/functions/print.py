@@ -26,9 +26,9 @@ class func_print:
 
             if cmd == "-help":
                 print(
-                    "print:\n"
-                    "   -help: Show help of module. This parameter can only be used alone.\n"
-                    "   -ec:<string>: Set encoding."
+                    f"{CYAN}print{RESET}\n"
+f"   {NGREEN}-help{WHITE}                    Show help of module. This parameter can only be used alone.\n"
+f"   {NGREEN}-ec:<string>{WHITE}             Set encoding."
                 )
                 return
                 pass

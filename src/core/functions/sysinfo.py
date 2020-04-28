@@ -27,59 +27,59 @@ class func_sysinfo:
 
         if cmd == "-help":
             print(
-                "sysinfo:\n"
-                "   -help: Show help of module. This parameter can only be used alone.\n"
-                "   -all: Show all informations of system. This parameter can only be used alone.\n"
-                "   -cpu: Show about of processor.\n"
-                "   -cpuc: Show core count of processor.\n"
-                "   -platform: Show platform name.\n"
-                "   -node: Show network name of current pc.\n"
-                "   -rls: Show release of system.\n"
-                "   -ver: Show version of system release.\n"
-                "   -machine: Show machine type."
+                f"{CYAN}sysinfo{RESET}\n"
+f"   {NGREEN}-help{WHITE}                    Show help of module. This parameter can only be used alone.\n"
+f"   {NGREEN}-all{WHITE}                     Show all informations of system. This parameter can only be used alone.\n"
+f"   {NGREEN}-cpu{WHITE}                     Show about of processor.\n"
+f"   {NGREEN}-cpuc{WHITE}                    Show core count of processor.\n"
+f"   {NGREEN}-platform{WHITE}                Show platform name.\n"
+f"   {NGREEN}-node{WHITE}                    Show network name of current pc.\n"
+f"   {NGREEN}-rls{WHITE}                     Show release of system.\n"
+f"   {NGREEN}-ver{WHITE}                     Show version of system release.\n"
+f"   {NGREEN}-machine{WHITE}                 Show machine type."
             )
             return
             pass
         if cmd == "-all":
             print(
-                "Platform: " + platform.system() + "\n"
-                "Version: " + platform.version() + "\n"
-                "Release: " + platform.release() + "\n"
-                "Node: " + platform.node() + "\n"
-                "Machine: " + platform.machine() + "\n"
-                "CPU: " + platform.processor() + "\n"
-                "CPU~Cores: " + platform.os.cpu_count().__str__()
+f"{NGREEN}Platform{WHITE}                    {platform.system()}\n"
+f"{NGREEN}Version{WHITE}                     {platform.version()}\n"
+f"{NGREEN}Release{WHITE}                     {platform.release()}\n"
+f"{NGREEN}Node{WHITE}                        {platform.node()}\n"
+f"{NGREEN}Machine{WHITE}                     {platform.machine()}\n"
+f"{NGREEN}CPU{WHITE}                         {platform.processor()}\n"
+f"{NGREEN}CPU~Cores{WHITE}                   {platform.os.cpu_count().__str__()}"
             )
             return
             pass
         msg = ""
         for element in params:
             if element == "platform":
-                msg += "Platform: " + platform.system() + "\n"
+                msg += f"{NGREEN}Platform{WHITE}                    {platform.system()}\n"
                 continue
                 pass
             if element == "ver":
-                msg += "Version: " + platform.version() + "\n"
+                msg += f"{NGREEN}Version{WHITE}                    {platform.version()}\n"
                 continue
                 pass
             if element == "rls":
-                msg += "Release: " + platform.release() + "\n"
+                msg += f"{NGREEN}Release{WHITE}                    {platform.release()}\n"
                 continue
                 pass
             if element == "node":
-                msg += "Node: " + platform.node() + "\n"
+                msg += f"{NGREEN}Node{WHITE}                    {platform.node()}\n"
                 continue
                 pass
             if element == "machine":
-                msg += "Machine: " + platform.machine() + "\n"
+                msg += f"{NGREEN}Machine{WHITE}                    {platform.machine()}\n"
                 continue
                 pass
             if element == "cpu":
-                msg += "CPU: " + platform.processor() + "\n"
+                msg += f"{NGREEN}CPU{WHITE}                    {platform.processor()}\n"
                 continue
                 pass
             if element == "cpuc":
-                msg += "CPU~Cores: " + platform.os.cpu_count().__str__() + "\n"
+                msg += f"{NGREEN}CPU~Cores{WHITE}{platform.os.cpu_count().__str__()}\n"
                 continue
                 pass
 
