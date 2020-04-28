@@ -2,6 +2,11 @@
 
 Allows you to manage the current location. It has the same function as what you know from most shell.
 
+It is sufficient to use it alone to find out the current directory. as follows:
+```
+cd
+```
+#
 To enter a directory, that directory must be in the directory you are in.
 
 The following command must be processed to enter the directory:
