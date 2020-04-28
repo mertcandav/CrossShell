@@ -13,6 +13,11 @@ You want to delete multiple files but this is not supported, there is a way to d
 rmdir "MyDir*" -rgx
 ```
 When you enable regular expression queries, you can delete with regular expression patterns like the above command.
+#
+The ``-tree`` parameter can be used to delete with the children. As follows:
+```
+rmdir "MyDir*" -rgx -tree
+```
 
 ### Parameters
 
