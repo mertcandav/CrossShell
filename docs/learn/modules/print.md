@@ -9,3 +9,6 @@ This module reads and displays the contents of the specified file.
 
 + ``-ec:<string>``<br>
     Set encoding.
+
++ ``-more``<br>
+    Show line by line.
