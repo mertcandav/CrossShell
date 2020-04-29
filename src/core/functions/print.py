@@ -26,7 +26,8 @@ class func_print:
                 print(
                     f"{CYAN}print{RESET}\n"
 f"   {NGREEN}-help{WHITE}                    Show help of module. This parameter can only be used alone.\n"
-f"   {NGREEN}-ec:<string>{WHITE}             Set encoding."
+f"   {NGREEN}-ec:<string>{WHITE}             Set encoding.\n"
+f"   {NGREEN}-more{WHITE}                    Show line by line."
                 )
                 return
                 pass
@@ -37,9 +38,14 @@ f"   {NGREEN}-ec:<string>{WHITE}             Set encoding."
         
         msg = ""
         encoding = "utf-8"
+        more = False
         for element in params:
             if element.startswith("ec:"):
                 encoding = Eng_string.process(element[3:])
+                continue
+                pass
+            if element.startswith("more"):
+                more = True
                 continue
                 pass
 
@@ -48,7 +54,15 @@ f"   {NGREEN}-ec:<string>{WHITE}             Set encoding."
             pass
 
         if (msg != ERROR) & (encoding != ERROR):
-            print(fs.readAllText(path,encoding))
+            if more:
+                for line in fs.readAllLines(path,encoding):
+                    input(line[:line.__len__()-1])
+                    pass
+                pass
+            else:
+                print(fs.readAllText(path,encoding))
+                pass
+
             return
             pass
 

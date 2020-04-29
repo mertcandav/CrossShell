@@ -14,6 +14,17 @@ class fs:
         pass
 
     @staticmethod
+    def readAllLines(path: str, encoding: str) -> list:
+        file = open(path, mode="r", encoding=encoding)
+        lines = []
+        for line in file.readlines():
+            lines.append(line)
+            pass
+        file.close()
+        return lines
+        pass
+
+    @staticmethod
     def writeAllText(path: str, content: str, encoding: str) -> None:
         file = open(path, mode="w", encoding=encoding)
         file.write(content)
