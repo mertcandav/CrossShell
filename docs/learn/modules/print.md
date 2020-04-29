@@ -1,4 +1,4 @@
-# netinfo
+# print
 
 This module reads and displays the contents of the specified file.
 
