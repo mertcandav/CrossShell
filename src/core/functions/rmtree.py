@@ -33,10 +33,6 @@ f"   {NGREEN}-rgx{WHITE}                     Use regular expressions."
             pass
         
         cmd = paramProcessor.getNonParam(cmd)
-        cmd = Eng_string.process(cmd)
-        if cmd == ERROR:
-            return
-            pass
 
         msg = ""
         regex = False
