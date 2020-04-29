@@ -1,4 +1,4 @@
-# rmdir
+# rmtree
 
 This module is a module that allows you to delete directories and childs.
 
