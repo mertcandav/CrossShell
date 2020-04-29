@@ -34,10 +34,6 @@ f"   {NGREEN}-tree{WHITE}                    Include child items."
             pass
         
         cmd = paramProcessor.getNonParam(cmd)
-        cmd = Eng_string.process(cmd)
-        if cmd == ERROR:
-            return
-            pass
 
         msg = ""
         regex = False
