@@ -33,6 +33,10 @@ class CS_SHELL(Cmd):
     #########################################################
     #########################################################
 
+    def emptyline(self) -> None:
+        return
+        pass
+
     def do_exit(self, args: str) -> None:
         exit(0)
         pass
