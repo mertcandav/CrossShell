@@ -30,7 +30,7 @@ class fs:
     @staticmethod
     def getDirectories(path: str) -> list:
         dirs = os.listdir(path)
-        dirs = (val for val in dirs if os.path.isdir(val) == True)
+        dirs = (val for val in dirs if os.path.isfile(val) == False)
         return dirs
         pass
 

@@ -24,7 +24,7 @@ class func_ls:
             return
             pass
 
-        params = paramProcessor.getParams(cmd)
+        params = paramProcessor.getParams(" " + cmd)
         if params == ERROR:
             return
             pass
