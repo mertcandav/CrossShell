@@ -13,16 +13,6 @@ from framework.cli import *
 class func_mkdir:
     @staticmethod
     def process(term: terminal, cmd: str) -> None:
-        params = paramProcessor.getParams(" " + paramProcessor.removeNonParam(cmd))
-        if params == ERROR:
-            return
-            pass
-        
-        cmd = Eng_string.process(cmd)
-        if cmd == ERROR:
-            return
-            pass
-        
         path = os.path.join(term.CurrentPath, cmd)
         os.mkdir(path)
 
