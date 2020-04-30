@@ -16,6 +16,7 @@ from core.functions.print import *
 from core.functions.rmdir import *
 from core.functions.rmtree import *
 from core.functions.mkdir import *
+from core.functions.more import *
 from engine.values.Eng_string import *
 from engine.values.Eng_char import *
 from core.CrossShell import *
@@ -37,7 +38,7 @@ class CS_SHELL(cmd.Cmd):
         return
         pass
 
-    def precmd(self, line):
+    def precmd(self, line: str) -> str:
         param = paramProcessor.getNonParam(line).lower()
         if line.find(" ") != -1:
             line = f"{param} {paramProcessor.removeNonParam(line)}"
@@ -122,6 +123,10 @@ class CS_SHELL(cmd.Cmd):
 
     def do_mkdir(self, args: str) -> None:
         func_mkdir.process(self.term, args)
+        pass
+
+    def do_more(self, args: str) -> None:
+        func_more.process(self.term, args)
         pass
 
     def default(self, line: str) -> None:
