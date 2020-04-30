@@ -6,6 +6,7 @@ from core.terminal import terminal
 from engine.values.Eng_string import *
 from framework.fs import *
 from framework.cli import *
+from framework.drawing import *
 
 class func_more:
     @staticmethod
@@ -48,8 +49,15 @@ f"   {NGREEN}-ec:<string>{WHITE}             Set encoding."
             pass
 
         if (msg != ERROR) & (encoding != ERROR):
-            for line in fs.readAllLines(path,encoding):
-                input(line[:line.__len__()-1])
+            lines = fs.readAllLines(path,encoding)
+            lineslen = lines.__len__()
+            for dex in range(0, lineslen):
+                line = lines[dex]
+                print(f"{CLI_BACKPREVLINE}{CLI_CLEARLINE}", end="")
+                print(line, end="\r")
+                if lineslen - dex != 1:
+                    input(f"{ORANGE}----------{BOLD} {dex + 1}{BLUE}/{BOLD}{lineslen} {ORANGE}----------{WHITE}")
+                    pass
                 pass
             pass
 
