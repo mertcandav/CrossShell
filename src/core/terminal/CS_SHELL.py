@@ -42,6 +42,9 @@ class CS_SHELL(cmd.Cmd):
         if line in " ":
             line = param + paramProcessor.removeNonParam(line)
             pass
+        else:
+            line = param
+            pass
         return line
 
     def do_exit(self, args: str) -> None:
