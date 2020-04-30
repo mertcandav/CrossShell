@@ -22,7 +22,7 @@ from core.CrossShell import *
 from framework.fs import *
 from framework.cli import *
 
-class CS_SHELL(Cmd):
+class CS_SHELL(cmd.Cmd):
     # Fields.
     term = None
 
@@ -36,6 +36,13 @@ class CS_SHELL(Cmd):
     def emptyline(self) -> None:
         return
         pass
+
+    def precmd(self, line):
+        param = paramProcessor.getNonParam(line).lower()
+        if line in " ":
+            line = param + paramProcessor.removeNonParam(line)
+            pass
+        return line
 
     def do_exit(self, args: str) -> None:
         exit(0)
