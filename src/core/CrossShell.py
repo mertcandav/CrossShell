@@ -71,21 +71,21 @@ SysIntegrationMark = "$"
 
 # Dictionaries.
 HELP = {
-    "help":              "                            Show help of CrossShell commands.",
-    "exit":              "                            Exit from CrossShell.",
-    "about":             "                           Show about info of CrossShell.",
-    "clear":             "                           Clear the CLI screen.",
-    "pause":             "                           This module stops inputting commands until you press the ``enter`` key.",
-    "echo":              "                            Show message on screen.\n",
+    "HELP":              "                            Show help of CrossShell commands.",
+    "EXIT":              "                            Exit from CrossShell.",
+    "ABOUT":             "                           Show about info of CrossShell.",
+    "CLEAR":             "                           Clear the CLI screen.",
+    "PAUSE":             "                           This module stops inputting commands until you press the ``enter`` key.",
+    "ECHO":              "                            Show message on screen.\n",
     "$":                 "                               Use and manage system shell integration.\n",
-    "cd":                "                              Allows you to manage the current location.",
-    "ls":                "                              This module allows you to list the contents of the location at the current location.",
-    "netinfo":           "                         This module is a module that allows you to get information about the network.",
-    "sysinfo":           "                         This module is a module that allows you to get information about the system.",
-    "print":             "                           This module reads and displays the contents of the specified file.",
-    "mkdir":             "                           This module is a module that allows you to create directories.",
-    "rmdir":             "                           This module is a module that allows you to delete directories.",
-    "rmtree":            "                          This module is a module that allows you to delete directories and childs."
+    "CD":                "                              Allows you to manage the current location.",
+    "LS":                "                              This module allows you to list the contents of the location at the current location.",
+    "MKDIR":             "                           This module is a module that allows you to create directories.",
+    "RMDIR":             "                           This module is a module that allows you to delete directories.",
+    "RMTREE":            "                          This module is a module that allows you to delete directories and childs.",
+    "PRINT":             "                           This module reads and displays the contents of the specified file.\n",
+    "NETINFO":           "                         This module is a module that allows you to get information about the network.",
+    "SYSINFO":           "                         This module is a module that allows you to get information about the system.",
 }
 
 errors = {
