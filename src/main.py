@@ -78,7 +78,7 @@ if __name__ == "__main__":
     if platform.system() == "Windows":
         cmdProcessor.process(term,"clear")
         pass
-    print(ABOUT + "\n")
+    print(ABOUT)
     process_CrossShellJSON()
     main()
     pass

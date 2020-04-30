@@ -51,7 +51,7 @@ class CS_SHELL(Cmd):
         pass
 
     def do_about(self, args: str) -> None:
-        print(ABOUT)
+        print(FULL_ABOUT)
         pass
 
     def do_help(self, args: str) -> None:
