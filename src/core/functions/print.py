@@ -3,6 +3,7 @@ import os
 from core.CrossShell import *
 from engine.paramProcessor import paramProcessor
 from core.terminal import terminal
+from core.functions.more import *
 from engine.values.Eng_string import *
 from framework.fs import *
 from framework.cli import *
@@ -55,9 +56,7 @@ f"   {NGREEN}-more{WHITE}                    Show line by line."
 
         if (msg != ERROR) & (encoding != ERROR):
             if more:
-                for line in fs.readAllLines(path,encoding):
-                    input(line[:line.__len__()-1])
-                    pass
+                func_more.process(term, f"{path} -ec:\"{encoding}\"")
                 pass
             else:
                 print(fs.readAllText(path,encoding))
