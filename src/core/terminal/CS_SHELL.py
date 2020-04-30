@@ -39,13 +39,14 @@ class CS_SHELL(cmd.Cmd):
 
     def precmd(self, line):
         param = paramProcessor.getNonParam(line).lower()
-        if line in " ":
-            line = param + paramProcessor.removeNonParam(line)
+        if line.find(" ") != -1:
+            line = f"{param} {paramProcessor.removeNonParam(line)}"
             pass
         else:
             line = param
             pass
         return line
+        pass
 
     def do_exit(self, args: str) -> None:
         exit(0)
