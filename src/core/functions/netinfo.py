@@ -38,11 +38,7 @@ f"   {NGREEN}-mac{WHITE}                     Show physical address."
             return
             pass
         if cmd == "-all":
-            print(
-f"{NGREEN}Hostname{WHITE}                    {socket.gethostname()}\n"
-f"{NGREEN}IPv4 Address{WHITE}                {socket.gethostbyname(socket.gethostname())}\n"
-f"{NGREEN}Physical Address{WHITE}            " + ':'.join(("%012X" % uuid.getnode()) [i:i+2] for i in range(0,12,2))
-            )
+            func_netinfo.process("-hostname -ip -mac")
             return
             pass
 
