@@ -41,21 +41,13 @@ f"   {NGREEN}-machine{WHITE}                 Show machine type."
             return
             pass
         if cmd == "-all":
-            print(
-f"{NGREEN}Platform{WHITE}                    {platform.system()}\n"
-f"{NGREEN}Version{WHITE}                     {platform.version()}\n"
-f"{NGREEN}Release{WHITE}                     {platform.release()}\n"
-f"{NGREEN}Node{WHITE}                        {platform.node()}\n"
-f"{NGREEN}Machine{WHITE}                     {platform.machine()}\n"
-f"{NGREEN}CPU{WHITE}                         {platform.processor()}\n"
-f"{NGREEN}CPU~Cores{WHITE}                   {platform.os.cpu_count().__str__()}"
-            )
+            func_sysinfo.process("-platform -ver -rls -node -machine -cpu -cpuc")
             return
             pass
         msg = ""
         for element in params:
             if element == "platform":
-                msg += f"{NGREEN}Platform{WHITE}                    {platform.system()}\n"
+                msg += f"{NGREEN}Platform{WHITE}                    {platform.system()} \\ {sys.platform}\n"
                 continue
                 pass
             if element == "ver":
