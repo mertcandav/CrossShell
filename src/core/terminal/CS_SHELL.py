@@ -42,7 +42,7 @@ class CS_SHELL(cmd.Cmd):
 
     def precmd(self, line: str) -> str:
         param = paramProcessor.getNonParam(line).lower()
-        if line.find(" ") != -1:
+        if line.find(" -") != -1:
             line = f"{param} {paramProcessor.removeNonParam(line)}"
             pass
         else:

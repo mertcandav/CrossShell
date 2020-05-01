@@ -17,7 +17,7 @@ class paramProcessor:
 
     @staticmethod
     def removeNonParam(val: str) -> str:
-        pattern = " "
+        pattern = " -"
         dex = val.find(pattern)
         if dex != -1:
             val = val[dex+1:]
@@ -27,7 +27,7 @@ class paramProcessor:
 
     @staticmethod
     def getNonParam(val: str) -> str:
-        pattern = " "
+        pattern = " -"
         dex = val.find(pattern)
         if dex != -1:
             val = val[0:dex]

@@ -15,7 +15,7 @@ class func_mkdir:
     def process(term: terminal, cmd: str) -> None:
         path = os.path.join(term.CurrentPath, cmd)
         os.mkdir(path)
-
+        
         pass
 
     pass
