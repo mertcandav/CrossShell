@@ -84,6 +84,7 @@ HELP = {
     "$":                 "                               Use and manage system shell integration.\n",
     "CD":                "                              Allows you to manage the current location.",
     "LS":                "                              This module allows you to list the contents of the location at the current location.",
+    "TOUCH":             "                           This module allows you to create files.",
     "DEL":               "                             This module allows you to delete files.",
     "MKDIR":             "                           This module is a module that allows you to create directories.",
     "RMDIR":             "                           This module is a module that allows you to delete directories.",
