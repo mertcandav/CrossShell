@@ -84,10 +84,12 @@ HELP = {
     "$":                 "                               Use and manage system shell integration.\n",
     "CD":                "                              Allows you to manage the current location.",
     "LS":                "                              This module allows you to list the contents of the location at the current location.",
+    "DEL":               "                             This module allows you to delete files.",
     "MKDIR":             "                           This module is a module that allows you to create directories.",
     "RMDIR":             "                           This module is a module that allows you to delete directories.",
     "RMTREE":            "                          This module is a module that allows you to delete directories and childs.",
-    "PRINT":             "                           This module reads and displays the contents of the specified file.\n",
+    "PRINT":             "                           This module reads and displays the contents of the specified file.",
+    "EXEC":              "                            This module allows you to run a file.\n",
     "NETINFO":           "                         This module is a module that allows you to get information about the network.",
     "SYSINFO":           "                         This module is a module that allows you to get information about the system.",
 }
