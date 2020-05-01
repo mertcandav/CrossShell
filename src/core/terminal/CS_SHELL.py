@@ -15,6 +15,7 @@ from core.functions.ls import *
 from core.functions.print import *
 from core.functions.rmdir import *
 from core.functions.rmtree import *
+from core.functions.fdel import *
 from core.functions.mkdir import *
 from core.functions.exec import *
 from core.functions.more import *
@@ -132,6 +133,10 @@ class CS_SHELL(cmd.Cmd):
 
     def do_exec(self, args: str) -> None:
         func_exec.process(self.term, args)
+        pass
+
+    def do_del(self, args: str) -> None:
+        func_del.process(self.term, args)    
         pass
 
     def default(self, line: str) -> None:
