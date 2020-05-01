@@ -90,6 +90,7 @@ HELP = {
     "RMDIR":             "                           This module is a module that allows you to delete directories.",
     "RMTREE":            "                          This module is a module that allows you to delete directories and childs.",
     "PRINT":             "                           This module reads and displays the contents of the specified file.",
+    "MORE":              "                            This module reads and displays the contents of the specified file line by line.",
     "EXEC":              "                            This module allows you to run a file.\n",
     "NETINFO":           "                         This module is a module that allows you to get information about the network.",
     "SYSINFO":           "                         This module is a module that allows you to get information about the system.",
