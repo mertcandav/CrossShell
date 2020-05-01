@@ -16,6 +16,7 @@ from core.functions.print import *
 from core.functions.rmdir import *
 from core.functions.rmtree import *
 from core.functions.mkdir import *
+from core.functions.exec import *
 from core.functions.more import *
 from engine.values.Eng_string import *
 from engine.values.Eng_char import *
@@ -127,6 +128,10 @@ class CS_SHELL(cmd.Cmd):
 
     def do_more(self, args: str) -> None:
         func_more.process(self.term, args)
+        pass
+
+    def do_exec(self, args: str) -> None:
+        func_exec.process(self.term, args)
         pass
 
     def default(self, line: str) -> None:
