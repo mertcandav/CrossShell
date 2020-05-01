@@ -8,7 +8,7 @@ rmdir MyDir
 ```
 This command will delete the directory named "MyDir".
 #
-You want to delete multiple files but this is not supported, there is a way to do it, don't worry. With the ``-rgx`` parameter, you can delete using regular expression. For example, this command is enough to delete all directories that start with ``MyDir``:
+You want to delete multiple directories but this is not supported, there is a way to do it, don't worry. With the ``-rgx`` parameter, you can delete using regular expression. For example, this command is enough to delete all directories that start with ``MyDir``:
 ```
 rmdir MyDir* -rgx
 ```
