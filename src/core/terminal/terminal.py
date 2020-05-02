@@ -19,10 +19,17 @@ class terminal:
         self.CurrentPath = path
         pass
 
-    # Get input.
+    # Start input loop.
     def startLoop(self) -> str:
         self.Shell.Update()
         self.Shell.cmdloop()
+        pass
+
+    # Process one command.
+    def onecmd(self, cmd: str) -> None:
+        self.Shell.Update()
+        print(f"{self.Shell.prompt}{cmd}")
+        self.Shell.onecmd(cmd)
         pass
 
     pass

@@ -22,7 +22,12 @@ class scripter:
         commands = codeProcessor.getCommands(code)
 
         for command in commands:
-            term.Shell.onecmd(command)
+            if command.startswith("@") == True:
+                term.Shell.onecmd(command[1:])
+                pass
+            else:
+                term.onecmd(command)
+                pass
 
             pass
 
