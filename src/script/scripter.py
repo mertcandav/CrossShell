@@ -21,6 +21,11 @@ class scripter:
         term = terminal.terminal(func_cd.process(path, ".."))
         commands = codeProcessor.getCommands(code)
 
+        for command in commands:
+            term.Shell.onecmd(command)
+
+            pass
+
         pass
 
     pass
