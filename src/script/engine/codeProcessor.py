@@ -18,6 +18,11 @@ class codeProcessor:
         commands = []
         for command in code.split(";"):
             command = command.strip()
+
+            if (command == "") | (command == "@"):
+                continue
+                pass
+            
             commands.append(command)
             pass
 
