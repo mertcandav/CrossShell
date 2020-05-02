@@ -19,6 +19,7 @@ from core.functions.fdel import *
 from core.functions.mkdir import *
 from core.functions.exec import *
 from core.functions.touch import *
+from core.functions.script import *
 from core.functions.more import *
 from engine.values.Eng_string import *
 from engine.values.Eng_char import *
@@ -142,6 +143,10 @@ class CS_SHELL(cmd.Cmd):
 
     def do_touch(self, args: str) -> None:
         func_touch.process(self.term, args)
+        pass
+
+    def do_script(self, args: str) -> None:
+        func_script.process(self.term, args)
         pass
 
     def default(self, line: str) -> None:

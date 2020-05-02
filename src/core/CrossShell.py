@@ -1,5 +1,6 @@
 # CrossShell
 VERSION = "0.0.1"
+SCRIPT_EXTENSION = ".cs1"
 
 # Terminal Styles
 RED = "\033[1;31m"  
@@ -80,7 +81,8 @@ HELP = {
     "ABOUT":             "                           Show about info of CrossShell.",
     "CLEAR":             "                           Clear the CLI screen.",
     "PAUSE":             "                           This module stops inputting commands until you press the ``enter`` key.",
-    "ECHO":              "                            Show message on screen.\n",
+    "ECHO":              "                            Show message on screen.",
+    "SCRIPT":            "                          Run CrossShell script.\n",
     "$":                 "                               Use and manage system shell integration.\n",
     "CD":                "                              Allows you to manage the current location.",
     "LS":                "                              This module allows you to list the contents of the location at the current location.",
@@ -97,5 +99,12 @@ HELP = {
 }
 
 errors = {
-    1:  "ffffff0x1"
+    1:  "ffffff0x1",
+    2:  "ffffff0x2",
+}
+
+scriptErrors = {
+    1: "scffff0x1",
+    2: "scffff0x2",
+    3: "scffff0x3"
 }

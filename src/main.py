@@ -30,22 +30,31 @@ from core.CrossShell import *
 from core.terminal import terminal
 from engine.cmdProcessor import *
 from framework.fs import *
+from framework.cli import *
 
 # Fields.
 term = terminal.terminal(os.getcwd())
 
-# Exit with error message and code.
-def exitwerr(err: str, code: int) -> None:
-    cprint(RED, f"Ops! An error has occurred!\nError: " +
-        err + RED + "\nCode: { " + YELLOW + errors[code] + RED + " }")
-    input("\n\nPress enter for close... ")
-    exit(code)
+# Process start arguments.
+def process_Args() -> bool:
+    args = sys.argv[1:]
+    argslen = args.__len__()
+    if argslen > 1:
+        exitwerr(errors, "At most one initial argument can be given!", 2)
+        return False
+        pass
+    if argslen == 1:
+        term.Shell.onecmd(f"script {args[0]}")
+        return False
+        pass
+
+    return True
     pass
 
 # Read CrossShellJSON.
 def process_CrossShellJSON() -> None:
     if os.path.exists("CrossShell.json") == False:
-        exitwerr("CrossShell.json not found!", 1)
+        exitwerr(errors, "CrossShell.json not found!", 1)
         pass
 
     csjson = json.loads(fs.readAllText("CrossShell.json", "utf-8"))
@@ -75,10 +84,16 @@ def main() -> None:
 # Main point.
 if __name__ == "__main__":
     setTitle("CrossShell")
+    
     if platform.system() == "Windows":
         cmdProcessor.process(term,"clear")
         pass
+
     print(ABOUT)
+    
     process_CrossShellJSON()
-    main()
+    if process_Args() == True:
+        main()
+        pass
+    
     pass
