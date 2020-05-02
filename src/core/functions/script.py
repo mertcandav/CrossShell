@@ -3,6 +3,7 @@ import os
 from core.terminal import terminal
 from engine.paramProcessor import *
 from core.CrossShell import *
+from script.scripter import *
 from framework.fs import *
 from framework.cli import *
 
@@ -36,6 +37,8 @@ class func_script:
                 werr(scriptErrors, "There is no such CrossShell Script file in the specified path!", 3)
                 return
                 pass
+
+            scripter.interpret(path)
             return
             pass
 
