@@ -13,4 +13,15 @@ class codeProcessor:
         return code
         pass
 
+    @staticmethod
+    def getCommands(code: str) -> list:
+        commands = []
+        for command in code.split(";"):
+            command = command.strip()
+            commands.append(command)
+            pass
+
+        return commands
+        pass
+
     pass
