@@ -7,7 +7,7 @@ from framework.cli import *
 
 class func_cd:
     @staticmethod
-    def process(path: str,cmd: str) -> str:
+    def process(path: str, cmd: str) -> str:
         pth = Path(path)
         if cmd == "":
             cprintln(WHITE,path)
