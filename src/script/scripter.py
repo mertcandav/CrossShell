@@ -11,11 +11,12 @@ from framework.fs import *
 class scripter:
     @staticmethod
     def execScriptCommand(term: terminal, basePath: str, cmd: str) -> bool:
-        cmd = cmd.lower()
-        if cmd == "break":
+        cmd = cmd.strip()
+        lcmd = cmd.lower()
+        if lcmd == "break":
             return False
             pass
-        if cmd == "cdbasepath":
+        if lcmd == "cdbasepath":
             term.CurrentPath = basePath
             term.Shell.Update()
             return True
