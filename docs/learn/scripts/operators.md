@@ -6,7 +6,7 @@ Commands written alone appear as inputs on command lines. You can add `` @ '' to
 echo "Hello World"
 
 # Runtime:
-    C:\Users\docs\Desktop> echo "Hello World"
+    CS C:\Users\docs\Desktop> echo "Hello World"
     Hello World
 ```
 ```
