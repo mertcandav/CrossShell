@@ -7,6 +7,7 @@ from core.CrossShell import *
 from script.engine.codeProcessor import *
 from framework.cli import *
 from framework.fs import *
+from script.functions.input import *
 
 class scripter:
     @staticmethod
@@ -48,6 +49,15 @@ class scripter:
         commands = codeProcessor.getCommands(code)
 
         for command in commands:
+            if command.find("<-") != -1:
+                rval = scfunc_input.process(variables, command)
+                if rval == ERROR:
+                    return
+                    pass
+
+                variables.append(rval)
+                continue
+                pass
             if command.startswith(">"):
                 if scripter.execScriptCommand(term, [ basePath, func_cd.process(path, "..") ], command[1:]) == False:
                     return

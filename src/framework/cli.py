@@ -32,3 +32,8 @@ def cprintln(style: str, val: str) -> None:
     print(val)
     sys.stdout.write(RESET)
     pass
+
+def removeLastLine() -> None:
+    sys.stdout.write(CLI_BACKPREVLINE)
+    sys.stdout.write(CLI_CLEARLINE)
+    pass
