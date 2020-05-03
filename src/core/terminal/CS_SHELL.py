@@ -178,7 +178,7 @@ class CS_SHELL(cmd.Cmd):
 
         if self.term.SysShell == "":
             line = paramProcessor.removeParams(line)
-            cprintln(RED,f"'{line}' command not recognized!")
+            cprintln(RED,f"'{ORANGE}{line}{RED}' command not recognized!")
             pass
         else:
             subprocess.call(line, shell=True, cwd=self.term.CurrentPath)
