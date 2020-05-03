@@ -1,5 +1,4 @@
 # Imports.
-from script.engine.funcProcessor import *
 from script.engine.valueProcessor import *
 from script.objects.variable import *
 from engine.values.Eng_string import *
@@ -13,7 +12,7 @@ class scfunc_input:
         if val == ERROR:
             return ERROR
             pass
-
+        
         _input = input(val)
 
         return _input

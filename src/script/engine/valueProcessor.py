@@ -8,6 +8,9 @@ from framework.cli import *
 class valueProcessor:
     @staticmethod
     def process(variables: list, cmd: str) -> str:
+        # Imports.
+        from script.engine.funcProcessor import funcProcessor
+
         parts = cmd.split('+')
         val = ""
         for part in parts:
@@ -18,12 +21,12 @@ class valueProcessor:
                     return ERROR
                     pass
                 if variable.exists(variables, part[1:]) == False:
-                    werr(scriptRuntineErrors, "The variable tried to be reached is not defined!", 5)
+                    werr(scriptRuntimeErrors, "The variable tried to be reached is not defined!", 5)
                     return ERROR
                     pass
                 val += variable.getByName(variables, part[1:]).Value
                 continue
-                pass  
+                pass
             if part.startswith("\"") == True:
                 cval = Eng_string.process(part)
                 
@@ -42,6 +45,20 @@ class valueProcessor:
                     pass
                 
                 val += cval
+                continue
+                pass
+
+            fpresult = funcProcessor.process(variables, part)
+            if fpresult == ERROR:
+                return ERROR
+                pass
+            if fpresult != ERROR:
+                if fpresult == None:
+                    werr(scriptRuntimeErrors, "The function that does not return a value was used in the value conversion!", 1)
+                    return ERROR
+                    pass
+
+                val += fpresult
                 continue
                 pass
 

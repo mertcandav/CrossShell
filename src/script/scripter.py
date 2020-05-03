@@ -5,7 +5,7 @@ from core.functions.cd import *
 from core.terminal import terminal
 from core.CrossShell import *
 from script.engine.codeProcessor import *
-from script.engine.funcProcessor import *
+from script.engine.funcProcessor import funcProcessor
 from framework.cli import *
 from framework.fs import *
 from script.functions.input import *
@@ -60,13 +60,14 @@ class scripter:
                 term.Shell.onecmd(command[1:])
                 pass
             else:
-                fpresult = funcProcessor.process(variables, command)
-                if fpresult == ERROR:
-                    return
-                    pass
-                if fpresult != ERROR:
-                    continue
-                    pass
+                if re.match("\\w*( *)\\(.*", command, flags = re.UNICODE):
+                    fpresult = funcProcessor.process(variables, command)
+                    if fpresult == ERROR:
+                        return
+                        pass
+                    if fpresult != ERROR:
+                        continue
+                        pass
 
                 term.onecmd(command)
                 pass

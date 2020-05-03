@@ -112,7 +112,7 @@ scriptErrors = {
 
 scriptRuntimeErrors = {
     0: "scffff1x0",         # Script command not recognized!
-    1: "scffff1x1",         # 
+    1: "scffff1x1",         # The function that does not return a value was used in the value conversion!
     2: "scffff1x2",         # Error in value conversion!
     3: "scffff1x3",         # 
     4: "scffff1x4",         # Variable is not specified!
