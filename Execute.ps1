@@ -23,4 +23,4 @@
 
 #!bin/bash
 
-py src/main.py
+py -tt src/main.py
