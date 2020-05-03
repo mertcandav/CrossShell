@@ -28,7 +28,9 @@ class scfunc_input:
             return ERROR
             pass
 
-        var = variable(parts[0], parts[1])
+        _input = input(parts[1])
+
+        var = variable(parts[0], _input)
 
         return var
         pass

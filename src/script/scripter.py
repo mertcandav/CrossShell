@@ -54,7 +54,7 @@ class scripter:
                 if rval == ERROR:
                     return
                     pass
-
+                
                 variables.append(rval)
                 continue
                 pass
