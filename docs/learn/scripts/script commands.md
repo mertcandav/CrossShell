@@ -4,5 +4,8 @@ These commands are special script commands and can only be used with scripts, th
 
 <br>
 
-<B>``BREAK``</b><br>
+<b>``BREAK``</b><br>
 Break the script. After this command is processed, the script is terminated before the rest of the codemutes are processed.
+#
+<b>``CDBASEPATH``</b><br>
+Go to the location before the script was run.

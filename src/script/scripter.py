@@ -54,9 +54,6 @@ class scripter:
                 pass
 
             pass
-        
-        term.CurrentPath = basePath
-        term.Shell.Update()
 
         pass
 
