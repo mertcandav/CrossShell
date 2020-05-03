@@ -15,3 +15,11 @@ echo "Hello World"
 # Runtime:
     Hello World
 ```
+
+<br>
+
+## >
+This command indicates that there are commands specific to CrossShell Scripts. It is put at the beginning of special commands. E.g:
+```
+echo "Hello World"; >BREAK
+```
