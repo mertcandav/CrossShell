@@ -10,6 +10,14 @@ from framework.fs import *
 
 class scripter:
     @staticmethod
+    def execScriptCommand(term: terminal, cmd: str) -> bool:
+        cmd = cmd.lower()
+        if cmd == "break":
+            return False
+            pass
+        pass
+
+    @staticmethod
     def interpret(term: terminal, path: str) -> None:
         # Read code.
         code = fs.readAllText(path, "utf-8")
@@ -26,6 +34,12 @@ class scripter:
         commands = codeProcessor.getCommands(code)
 
         for command in commands:
+            if command.startswith(">"):
+                if scripter.execScriptCommand(term, command[1:]) == False:
+                    return
+                    pass
+                continue
+                pass
             if command.startswith("@") == True:
                 term.Shell.onecmd(command[1:])
                 pass

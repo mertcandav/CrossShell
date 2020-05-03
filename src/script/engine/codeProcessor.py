@@ -19,7 +19,7 @@ class codeProcessor:
         for command in code.split(";"):
             command = command.strip()
 
-            if (command == "") | (command == "@"):
+            if (command == "") | (command == "@") | (command == ">"):
                 continue
                 pass
             
