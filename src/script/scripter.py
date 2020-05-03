@@ -10,11 +10,17 @@ from framework.fs import *
 
 class scripter:
     @staticmethod
-    def execScriptCommand(term: terminal, cmd: str) -> bool:
+    def execScriptCommand(term: terminal, basePath: str, cmd: str) -> bool:
         cmd = cmd.lower()
         if cmd == "break":
             return False
             pass
+        if cmd == "cdbasepath":
+            term.CurrentPath = basePath
+            term.Shell.Update()
+            pass
+
+        return True
         pass
 
     @staticmethod
@@ -35,7 +41,7 @@ class scripter:
 
         for command in commands:
             if command.startswith(">"):
-                if scripter.execScriptCommand(term, command[1:]) == False:
+                if scripter.execScriptCommand(term, basePath, command[1:]) == False:
                     return
                     pass
                 continue
