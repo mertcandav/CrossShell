@@ -100,24 +100,23 @@ HELP = {
 }
 
 errors = {
-    1:  "ffffff0x1",
-    2:  "ffffff0x2",
+    1:  "ffffff0x1",        # CrossShell.json not found!
+    2:  "ffffff0x2",        # At most one initial argument can be given!
 }
 
 scriptErrors = {
-    1: "scffff0x1",
-    2: "scffff0x2",
-    3: "scffff0x3"
+    1: "scffff0x1",         # The extension of the specified script file was not correct!
+    2: "scffff0x2",         # The specified path does not exist!
+    3: "scffff0x3"          # There is no such CrossShell Script file in the specified path!
 }
 
 scriptRuntimeErrors = {
-    0: "scffff1x0",
-    1: "scffff1x1",
-    2: "scffff1x2",
-    3: "scffff1x3",
-    4: "scffff1x4",
-    5: "scffff1x5",
-    6: "scffff1x6",
-    7: "scffff1x7",
-    8: "scffff1x8"
+    0: "scffff1x0",         # Script command not recognized!
+    1: "scffff1x1",         # 
+    2: "scffff1x2",         # Error in value conversion!
+    3: "scffff1x3",         # 
+    4: "scffff1x4",         # Variable is not specified!
+    5: "scffff1x5",         # The variable tried to be reached is not defined!
+    6: "scffff1x6",         # The function is turned on but not turned off!
+    7: "scffff1x7"          # Function not recognized!
 }

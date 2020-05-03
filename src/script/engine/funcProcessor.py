@@ -11,7 +11,7 @@ class funcProcessor:
             return NO_ERROR
             pass
         if cmd.endswith(")") == False:
-            werr(scriptRuntimeErrors, "The function is turned on but not turned off!", 8)
+            werr(scriptRuntimeErrors, "The function is turned on but not turned off!", 6)
             return ERROR
             pass
 
