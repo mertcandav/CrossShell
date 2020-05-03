@@ -1,4 +1,5 @@
 # Imports.
+from script.engine.valueProcessor import *
 from script.objects.variable import *
 from engine.values.Eng_string import *
 from core.CrossShell import *
@@ -16,10 +17,8 @@ class scfunc_input:
         parts[0] = parts[0].strip()
         parts[1] = parts[1].strip()
         
-        parts[1] = Eng_string.process(parts[1])
+        parts[1] = valueProcessor.process(variables, parts[1])
         if parts[1] == ERROR:
-            removeLastLine()
-            werr(scriptRuntimeErrors, "Error in value conversion by 'input' command!", 2)
             return ERROR
             pass
 
