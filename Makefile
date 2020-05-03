@@ -31,4 +31,4 @@ all: execute
 
 # Works
 execute: $(SRCDIR)main.py
-	py $<
+	py -tt $<
