@@ -9,3 +9,6 @@ Break the script. After this command is processed, the script is terminated befo
 #
 <b>``CDBASEPATH``</b><br>
 Go to the location before the script was run.
+#
+<b>``CDSCRIPTPATH``</b><br>
+Go to the location of the script file.
