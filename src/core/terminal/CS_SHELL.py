@@ -32,7 +32,7 @@ class CS_SHELL(cmd.Cmd):
     term = None
 
     def Update(self) -> None:
-        self.prompt = f"{CROSSSHELL_YELLOW}C{CROSSSHELL_BLUE}S {BLUE}{self.term.CurrentPath}>{RED}{self.term.SysShell} {RESET}"
+        self.prompt = f"{CROSSSHELL_YELLOW}C{CROSSSHELL_BLUE}S {PROMPT}{self.term.CurrentPath}>{RED}{self.term.SysShell} {RESET}"
         pass
 
     def Break(self) -> bool:
