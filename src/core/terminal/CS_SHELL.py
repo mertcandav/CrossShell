@@ -70,6 +70,15 @@ class CS_SHELL(cmd.Cmd):
             pass
         pass
 
+    def do_cls(self, args: str) -> None:
+        if platform.system() == "Windows":
+            os.system("cls")
+            pass
+        else:
+            os.system("clear")
+            pass
+        pass
+
     def do_about(self, args: str) -> None:
         print(FULL_ABOUT)
         pass
