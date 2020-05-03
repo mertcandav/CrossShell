@@ -38,7 +38,7 @@ class func_script:
                 return
                 pass
 
-            scripter.interpret(path)
+            scripter.interpret(term, path)
             return
             pass
 

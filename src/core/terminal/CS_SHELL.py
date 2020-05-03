@@ -35,6 +35,10 @@ class CS_SHELL(cmd.Cmd):
         self.prompt = f"{CROSSSHELL_YELLOW}C{CROSSSHELL_BLUE}S {BLUE}{self.term.CurrentPath}>{RED}{self.term.SysShell} {RESET}"
         pass
 
+    def Break(self) -> bool:
+        return True
+        pass
+
     #########################################################
     #########################################################
 

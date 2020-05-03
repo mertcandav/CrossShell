@@ -10,15 +10,19 @@ from framework.fs import *
 
 class scripter:
     @staticmethod
-    def interpret(path: str) -> None:
+    def interpret(term: terminal, path: str) -> None:
         # Read code.
         code = fs.readAllText(path, "utf-8")
         
         # Prepare the code.
         code = codeProcessor.clearComments(code)
 
+        basePath = term.CurrentPath
+
+        term.CurrentPath = func_cd.process(path, "..")
+        term.Shell.Update()
+
         variables = []
-        term = terminal.terminal(func_cd.process(path, ".."))
         commands = codeProcessor.getCommands(code)
 
         for command in commands:
@@ -30,6 +34,9 @@ class scripter:
                 pass
 
             pass
+        
+        term.CurrentPath = basePath
+        term.Shell.Update()
 
         pass
 
