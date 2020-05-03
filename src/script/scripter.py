@@ -18,9 +18,11 @@ class scripter:
         if cmd == "cdbasepath":
             term.CurrentPath = basePath
             term.Shell.Update()
+            return True
             pass
+        
+        werr(scriptRuntimeErrors, f"'{ORANGE}{cmd}{RED}' Script command not recognized!", 0)
 
-        return True
         pass
 
     @staticmethod
