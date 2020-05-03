@@ -25,4 +25,6 @@
 
 @echo "Hello World";
 
+name <- "";
+
 >CDBASEPATH;

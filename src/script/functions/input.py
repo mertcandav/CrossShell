@@ -23,6 +23,11 @@ class scfunc_input:
             return ERROR
             pass
 
+        if list(var for var in variables if var.Name == parts[0]).__len__() > 0:
+            werr(scriptRuntimeErrors, "A variable has already been defined with the same name!", 3)
+            return ERROR
+            pass
+
         var = variable(parts[0], parts[1])
 
         return var
