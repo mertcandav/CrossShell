@@ -25,6 +25,4 @@
 
 @echo "Hello World";
 
-name <- "Type name here:";
-
 >CDBASEPATH;

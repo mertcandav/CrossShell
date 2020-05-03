@@ -5,6 +5,7 @@ from core.functions.cd import *
 from core.terminal import terminal
 from core.CrossShell import *
 from script.engine.codeProcessor import *
+from script.engine.funcProcessor import *
 from framework.cli import *
 from framework.fs import *
 from script.functions.input import *
@@ -29,7 +30,7 @@ class scripter:
             pass
         
         werr(scriptRuntimeErrors, f"'{ORANGE}{cmd}{RED}' Script command not recognized!", 0)
-
+        return
         pass
 
     @staticmethod
@@ -49,15 +50,6 @@ class scripter:
         commands = codeProcessor.getCommands(code)
 
         for command in commands:
-            if command.find("<-") != -1:
-                rval = scfunc_input.process(variables, command)
-                if rval == ERROR:
-                    return
-                    pass
-                
-                variables.append(rval)
-                continue
-                pass
             if command.startswith(">"):
                 if scripter.execScriptCommand(term, [ basePath, func_cd.process(path, "..") ], command[1:]) == False:
                     return
@@ -68,6 +60,14 @@ class scripter:
                 term.Shell.onecmd(command[1:])
                 pass
             else:
+                fpresult = funcProcessor.process(variables, command)
+                if fpresult == ERROR:
+                    return
+                    pass
+                if fpresult != ERROR:
+                    continue
+                    pass
+
                 term.onecmd(command)
                 pass
 

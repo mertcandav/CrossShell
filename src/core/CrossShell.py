@@ -116,5 +116,8 @@ scriptRuntimeErrors = {
     2: "scffff1x2",
     3: "scffff1x3",
     4: "scffff1x4",
-    5: "scffff1x5"
+    5: "scffff1x5",
+    6: "scffff1x6",
+    7: "scffff1x7",
+    8: "scffff1x8"
 }
