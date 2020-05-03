@@ -79,7 +79,7 @@ HELP = {
     "HELP":              "                            Show help of CrossShell commands.",
     "EXIT":              "                            Exit from CrossShell.",
     "ABOUT":             "                           Show about info of CrossShell.",
-    "CLEAR":             "                           Clear the CLI screen.",
+    "CLEAR/CLS":         "                       Clear the CLI screen.",
     "PAUSE":             "                           This module stops inputting commands until you press the ``enter`` key.",
     "ECHO":              "                            Show message on screen.",
     "SCRIPT":            "                          Run CrossShell script.\n",
