@@ -10,7 +10,7 @@ It asks the user to input with the message sent as an argument.
 
 Example use:
 ```
-input("Type your name: ")
+input("Type your name: ");
 
 # Output: Type your name: <input>
 ```
