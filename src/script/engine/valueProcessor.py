@@ -1,5 +1,6 @@
 # Imports.
 from script.objects.variable import *
+from script.engine.listProcessor import *
 from engine.values.Eng_string import *
 from engine.values.Eng_char import *
 from core.CrossShell import *
@@ -20,11 +21,11 @@ class valueProcessor:
                     werr(scriptRuntimeErrors, "Variable is not specified!", 4)
                     return ERROR
                     pass
-                if variable.exists(variables, part[1:]) == False:
+                if listProcessor.exists(variables, part[1:]) == False:
                     werr(scriptRuntimeErrors, "The variable tried to be reached is not defined!", 5)
                     return ERROR
                     pass
-                val += variable.getByName(variables, part[1:]).Value
+                val += lsitProcessor.getByName(variables, part[1:]).Value
                 continue
                 pass
             if part.startswith("\"") == True:
