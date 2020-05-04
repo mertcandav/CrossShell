@@ -1,6 +1,7 @@
 # Imports.
 import re
 from script.functions.input import *
+from script.functions.print import *
 from core.CrossShell import *
 from framework.cli import *
 
@@ -51,5 +52,6 @@ class funcProcessor:
 
 # Dictionaries.
 funcs = {
-    "input":    scfunc_input
+    "input":    scfunc_input,
+    "print":    scfunc_print
 }
