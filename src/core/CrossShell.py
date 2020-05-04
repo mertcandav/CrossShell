@@ -107,7 +107,7 @@ errors = {
 scriptErrors = {
     1: "scffff0x1",         # The extension of the specified script file was not correct!
     2: "scffff0x2",         # The specified path does not exist!
-    3: "scffff0x3"          # There is no such CrossShell Script file in the specified path!
+    3: "scffff0x3",         # There is no such CrossShell Script file in the specified path!
 }
 
 scriptRuntimeErrors = {
@@ -118,5 +118,6 @@ scriptRuntimeErrors = {
     4: "scffff1x4",         # Variable is not specified!
     5: "scffff1x5",         # The variable tried to be reached is not defined!
     6: "scffff1x6",         # The function is turned on but not turned off!
-    7: "scffff1x7"          # Function not recognized!
+    7: "scffff1x7",         # Function not recognized!
+    8: "scffff1x8",         # No color found!
 }

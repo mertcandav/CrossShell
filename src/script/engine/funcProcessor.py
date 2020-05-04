@@ -2,6 +2,7 @@
 import re
 from script.functions.input import *
 from script.functions.print import *
+from script.functions.setForeColor import *
 from core.CrossShell import *
 from framework.cli import *
 
@@ -58,6 +59,7 @@ class funcProcessor:
 
 # Dictionaries.
 funcs = {
-    "input":            scfunc_input,
-    "print":            scfunc_print
+    "input":                scfunc_input,
+    "print":                scfunc_print,
+    "setForeColor":         scfunc_setForeColor,
 }
