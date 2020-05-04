@@ -10,11 +10,17 @@ Example use:
 setForeColor("Yellow");
 ```
 
+If you want to return to the default color, you can write "Default".<br>
+Example use:
+```
+setForeColor("Default");
+```
+
 Available colors are all HTML color names.
 
 <br>
 
-# Colors
+## Colors
 
 <b>IndianRed<b><br>
 <b>LightCoral<b><br>
