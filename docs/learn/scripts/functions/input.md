@@ -3,8 +3,7 @@
 You can request user input with input function.
 
 Overloadings:
-+ ``input(string msg)``
-+ ``input(char msg)``
++ ``input(msg)``
 
 It asks the user to input with the message sent as an argument.
 

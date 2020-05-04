@@ -3,7 +3,7 @@
 Sets the forecolor color with the name of the specified color. The set color remains permanently until it is changed again!
 
 Overloadings:
-+ ``setForeColor(string name)``
++ ``setForeColor(name)``
 
 Example use:
 ```
