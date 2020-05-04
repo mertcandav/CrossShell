@@ -48,10 +48,16 @@ class funcProcessor:
         return re.match("\\w*( *)\\(.*", val, flags = re.UNICODE | re.S)
         pass
 
+    @staticmethod
+    def getParams(val: str) -> list:
+        params = val.split(",")
+        return params
+        pass
+
     pass
 
 # Dictionaries.
 funcs = {
-    "input":    scfunc_input,
-    "print":    scfunc_print
+    "input":            scfunc_input,
+    "print":            scfunc_print
 }
