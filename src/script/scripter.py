@@ -60,7 +60,7 @@ class scripter:
                 term.Shell.onecmd(command[1:])
                 pass
             else:
-                if re.match("\\w*( *)\\(.*", command, flags = re.UNICODE):
+                if funcProcessor.isFunc(command):
                     fpresult = funcProcessor.process(variables, command)
                     if fpresult == ERROR:
                         return

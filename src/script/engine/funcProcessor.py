@@ -1,4 +1,5 @@
 # Imports.
+import re
 from script.functions.input import *
 from core.CrossShell import *
 from framework.cli import *
@@ -39,6 +40,11 @@ class funcProcessor:
     @staticmethod
     def getContent(val: str) -> str:
         return val[1:val.__len__()-1]
+        pass
+
+    @staticmethod
+    def isFunc(val: str) -> bool:
+        return re.match("\\w*( *)\\(.*", val, flags = re.UNICODE | re.S)
         pass
 
     pass
