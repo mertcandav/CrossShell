@@ -58,7 +58,20 @@ class scripter:
                 continue
                 pass
             if command.startswith("@") == True:
-                term.Shell.onecmd(command[1:])
+                command = command[1:]
+                operatorDex = command.find("<-")
+                if operatorDex != -1:
+                    valuePart = command[operatorDex+2:].strip()
+                    val = valueProcessor.process(variables, valuePart)
+                    if val == ERROR:
+                        return
+                        pass
+
+                    command = command[:operatorDex] + val
+                    pass
+
+                term.Shell.onecmd(command)
+                continue
                 pass
             else:
                 if funcProcessor.isFunc(command):
@@ -75,6 +88,17 @@ class scripter:
                         pass
 
                     continue
+                    pass
+                
+                operatorDex = command.find("<-")
+                if operatorDex != -1:
+                    valuePart = command[operatorDex+2:].strip()
+                    val = valueProcessor.process(variables, valuePart)
+                    if val == ERROR:
+                        return
+                        pass
+
+                    command = command[:operatorDex] + val
                     pass
 
                 term.onecmd(command)
