@@ -7,7 +7,7 @@ from framework.cli import *
 
 class valueProcessor:
     @staticmethod
-    def process(variables: list, cmd: str) -> str:
+    def process(term, paths: list, functions: list, variables: list, cmd: str) -> str:
         # Imports.
         from script.engine.funcProcessor import funcProcessor
 
@@ -41,7 +41,7 @@ class valueProcessor:
                 pass
 
             if funcProcessor.isFunc(part):
-                fpresult = funcProcessor.process(variables, part)
+                fpresult = funcProcessor.process(term, paths, functions, variables, part)
                 if fpresult == ERROR:
                     return ERROR
                     pass

@@ -47,7 +47,7 @@ class scripter:
                         continue
                         pass
                 if variableProcessor.isVariableCode(command):
-                    if variableProcessor.process(variables, command) == ERROR:
+                    if variableProcessor.process(term, paths, functions, variables, command) == ERROR:
                         return
                         pass
 
@@ -64,7 +64,7 @@ class scripter:
                 operatorDex = command.find("<-")
                 if operatorDex != -1:
                     valuePart = command[operatorDex+2:].strip()
-                    val = valueProcessor.process(variables, valuePart)
+                    val = valueProcessor.process(term, paths, functions, variables, valuePart)
                     if val == ERROR:
                         return
                         pass

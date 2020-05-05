@@ -71,6 +71,7 @@ def process_CrossShellJSON() -> None:
 def main() -> None:
     # Command input loop.
     while True:
+        term.startLoop()
         try:
             term.startLoop()
             pass

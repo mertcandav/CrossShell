@@ -8,7 +8,7 @@ from framework.cli import *
 
 class scfunc_print:
     @staticmethod
-    def process(variables: list, content: str) -> None:
+    def process(term, paths: list, functions: list, variables: list, content: str) -> None:
         # Imports.
         from script.engine.funcProcessor import funcProcessor
 
@@ -20,14 +20,14 @@ class scfunc_print:
         
         val = content
         if params.__len__() == 2:
-            if scfunc_setForeColor.process(variables, params[0]) == ERROR:
+            if scfunc_setForeColor.process(term, paths, functions, variables, params[0]) == ERROR:
                 return ERROR
                 pass
 
             val = params[1]
             pass
 
-        val = valueProcessor.process(variables, val)
+        val = valueProcessor.process(term, paths, functions, variables, val)
         if val == ERROR:
             return ERROR
             pass

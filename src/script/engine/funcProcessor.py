@@ -33,7 +33,7 @@ class funcProcessor:
         if funcs.keys().__contains__(name) == True:
             content = cmd[dex+1:]
             content = content[:content.__len__()-1]
-            return funcs[name].process(variables, content)
+            return funcs[name].process(term, paths, functions, variables, content)
             pass
         else:
             return scripter.processRange(term, paths, functions, variables,

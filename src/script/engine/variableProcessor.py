@@ -7,7 +7,8 @@ from framework.cli import *
 
 class variableProcessor:
     @staticmethod
-    def process(variables: list, cmd: str) -> [ str, list ]:
+    def process(term, paths: list, functions: list, variables: list, cmd: str) -> [ str, list ]:
+
         parts = cmd.split("=")
         if parts.__len__() > 2:
             werr(scriptRuntimeErrors, "Error in variable definition!", 9)
@@ -28,7 +29,7 @@ class variableProcessor:
                 return ERROR
                 pass
 
-            value = valueProcessor.process(variables, parts[1])
+            value = valueProcessor.process(term, paths, functions, variables, parts[1])
             if value == ERROR:
                 return ERROR
                 pass
@@ -42,7 +43,7 @@ class variableProcessor:
                 return ERROR
                 pass
 
-            value = valueProcessor.process(variables, parts[1])
+            value = valueProcessor.process(term, paths, functions, variables, parts[1])
             if value == ERROR:
                 return ERROR
                 pass
