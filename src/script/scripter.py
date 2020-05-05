@@ -15,6 +15,18 @@ class scripter:
     @staticmethod
     def processRange(term: terminal, paths: list, functions: list, variables: list, commands: list) -> [ None, str ]:
         for command in commands:
+            if command.startswith("return"):
+                if command.startswith("return "):
+                    val = valueProcessor.process(term, paths, functions, variables, command[7:].strip())
+                    if val == ERROR:
+                        return ERROR
+                        pass
+
+                    return val
+                    pass
+
+                return None
+                pass
             if command.startswith(">"):
                 if scripter.execScriptCommand(term, paths, command[1:]) == False:
                     return
