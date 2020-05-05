@@ -27,11 +27,24 @@ echo "Hello World"; >BREAK
 <br>
 
 ## =
-
-```
 It is used in definitions and assignments. E.g:
 ```
 var name = input("Type your name: ");
 name = "Hello " + name;
 ```
+
+<br>
+
+## <-
+Force the terminal command to cry value with the value handler. This way variables etc. You can use. E.g:
+```
+var name = input("Type your name: ");
+@echo <- "\"Hello " + name + "\"";
+
+#>
+OUTPUT
+
+Type your name: <user input> # Mertcan
+Hello Mertcan
+<#
 ```
