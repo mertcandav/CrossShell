@@ -116,11 +116,13 @@ scriptRuntimeErrors = {
     2:      "scffff1x2",         # Error in value conversion!
     3:      "scffff1x3",         # More parameters have been sent to the function than you can take!
     4:      "scffff1x4",         # Variable is not specified!
-    5:      "scffff1x5",         # 
+    5:      "scffff1x5",         # Body error, '->' operator not found in function definition!
     6:      "scffff1x6",         # The function is turned on but not turned off!
     7:      "scffff1x7",         # Function not recognized!
     8:      "scffff1x8",         # No color found!
     9:      "scffff1x9",         # Error in variable definition!
     10:     "scffff1x10",        # An attempt was made to define a variable that has already been defined!
     11:     "scffff1x11",        # Forbidden character was used in the definition!
+    12:     "scffff1x12",        # The function body is turned not on!
+    13:     "scffff1x13",        # An attempt was made to define a function that has already been defined!
 }

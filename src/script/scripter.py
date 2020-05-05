@@ -13,7 +13,7 @@ from script.functions.input import *
 
 class scripter:
     @staticmethod
-    def processRange(term: terminal, paths: list, variables: list, commands: list):
+    def processRange(term: terminal, paths: list, functions: list, variables: list, commands: list) -> [ None, str ]:
         for command in commands:
             if command.startswith(">"):
                 if scripter.execScriptCommand(term, paths, command[1:]) == False:
@@ -39,7 +39,7 @@ class scripter:
                 pass
             else:
                 if funcProcessor.isFunc(command):
-                    fpresult = funcProcessor.process(variables, command)
+                    fpresult = funcProcessor.process(term, paths, functions, variables, command)
                     if fpresult == ERROR:
                         return
                         pass
@@ -53,7 +53,14 @@ class scripter:
 
                     continue
                     pass
-                
+                if funcProcessor.isFuncCode(command) | funcProcessor.isFuncDefination(command):
+                    if funcProcessor.processCode(term, paths, functions, variables, command) == ERROR:
+                        return
+                        pass
+
+                    continue
+                    pass
+
                 operatorDex = command.find("<-")
                 if operatorDex != -1:
                     valuePart = command[operatorDex+2:].strip()
@@ -70,6 +77,7 @@ class scripter:
 
             pass
 
+        return None
         pass
 
     @staticmethod
@@ -108,9 +116,10 @@ class scripter:
         term.Shell.Update()
 
         variables = []
+        functions = []
         commands = codeProcessor.getCommands(code)
 
-        scripter.processRange(term, [ basePath, func_cd.process(path, "..") ], variables, commands)
+        scripter.processRange(term, [ basePath, func_cd.process(path, "..") ], functions, variables, commands)
         pass
 
     pass

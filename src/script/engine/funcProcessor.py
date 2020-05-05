@@ -1,5 +1,8 @@
 # Imports.
 import re
+from core.terminal import terminal
+from script.engine.codeProcessor import *
+from script.objects.function import *
 from script.functions.input import *
 from script.functions.print import *
 from script.functions.setForeColor import *
@@ -8,7 +11,10 @@ from framework.cli import *
 
 class funcProcessor:
     @staticmethod
-    def process(variables: list, cmd: str) -> str:
+    def process(term: terminal, paths: list, functions: list, variables: list, cmd: str) -> str:
+        # Imports.
+        from script.scripter import scripter
+
         dex = cmd.find("(")
         if dex == -1:
             return NO_ERROR
@@ -19,14 +25,58 @@ class funcProcessor:
             pass
 
         name = cmd[:dex]
-        if funcs.keys().__contains__(name) == False:
+        if funcs.keys().__contains__(name) == False | function.exists(functions, name) == False:
             werr(scriptRuntimeErrors, "Function not recognized!", 7)
             return ERROR
             pass
 
-        content = cmd[dex+1:]
-        content = content[:content.__len__()-1]
-        return funcs[name].process(variables, content)
+        if funcs.keys().__contains__(name) == True:
+            content = cmd[dex+1:]
+            content = content[:content.__len__()-1]
+            return funcs[name].process(variables, content)
+            pass
+        else:
+            return scripter.processRange(term, paths, functions, variables,
+                function.getByName(functions, name).Commands)
+            pass
+        pass
+
+    @staticmethod
+    def processCode(term: terminal, paths: list, functions: list, variables: list, cmd: str) -> [ None, str ]:
+        # Imports.
+        from script.scripter import scripter
+        
+        # Define function.
+        if funcProcessor.isFuncDefination(cmd) == True:
+            cmd = cmd[5:]
+
+            name = funcProcessor.getName(cmd)
+            if codeProcessor.isBannedName(name) == True:
+                return ERROR
+                pass
+
+            if function.exists(functions, name) | funcs.keys().__contains__(name):
+                werr(scriptRuntimeErrors, "An attempt was made to define a function that has already been defined!", 13)
+                return ERROR
+                pass
+
+            commands = funcProcessor.getBody(cmd)
+            if commands == ERROR:
+                return ERROR
+                pass
+
+            functions.append(function(name, commands))
+            return
+            pass
+        # Run defination.
+        if funcProcessor.isFuncCode(cmd) == True:
+            commands = funcProcessor.getBody(cmd)
+            if commands == ERROR:
+                return ERROR
+                pass
+
+            return scripter.processRange(term, paths, functions, variables, commands)
+            pass
         pass
 
     @staticmethod
@@ -53,6 +103,52 @@ class funcProcessor:
     def getParams(val: str) -> list:
         params = val.split(",")
         return params
+        pass
+
+    @staticmethod
+    def isFuncCode(cmd: str) -> bool:
+        return cmd.startswith("->")
+        pass
+
+    @staticmethod
+    def isFuncDefination(cmd: str) -> bool:
+        return cmd.startswith("func ")
+        pass
+
+    @staticmethod
+    def getBody(val: str) -> str:
+        dex = val.find("->")
+        if dex == -1:
+            werr(scriptRuntimeErrors, "Body error, '->' operator not found in function definition!", 5)
+            return ERROR
+            pass
+        val = val[dex+2:].strip()
+        if val.startswith("{") == False:
+            werr(scriptRuntimeErrors, "The function body is turned not on!", 6)
+            return ERROR
+            pass
+        if val.endswith("}") == False:
+            werr(scriptRuntimeErrors, "The function body is turned on but not turned off!", 6)
+            return ERROR
+            pass
+
+        val = val[1:]
+        val = val[:val.__len__()-1]
+        val = val.strip()
+
+        commands = codeProcessor.getCommands(val)
+        return commands
+        pass
+
+    @staticmethod
+    def getName(val: str) -> str:
+        dex = val.find("->")
+        if dex != -1:
+            val = val[:dex]
+            pass
+
+        val = val.strip()
+        return val
         pass
 
     pass
