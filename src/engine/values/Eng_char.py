@@ -39,6 +39,10 @@ class Eng_char:
                 pass
 
             for key in escapes_check:
+                if key == "\"":
+                    continue
+                    pass
+                
                 if cval.find(key) != -1:
                     cprintln(RED, f"'{key}' invalid value!")
                     return ERROR
