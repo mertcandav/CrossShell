@@ -100,7 +100,7 @@ HELP = {
 }
 
 errors = {
-    1:  "ffffff0x1",        # CrossShell.json not found!
+    1:  "ffffff0x1",        # NOT USED! || CrossShell.json not found!
     2:  "ffffff0x2",        # At most one initial argument can be given!
 }
 

@@ -54,7 +54,8 @@ def process_Args() -> bool:
 # Read CrossShellJSON.
 def process_CrossShellJSON() -> None:
     if os.path.exists("CrossShell.json") == False:
-        exitwerr(errors, "CrossShell.json not found!", 1)
+        return
+        #exitwerr(errors, "CrossShell.json not found!", 1)
         pass
 
     csjson = json.loads(fs.readAllText("CrossShell.json", "utf-8"))
