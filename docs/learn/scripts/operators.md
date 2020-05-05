@@ -23,3 +23,15 @@ This command indicates that there are commands specific to CrossShell Scripts. I
 ```
 echo "Hello World"; >BREAK
 ```
+
+<br>
+
+## =
+
+```
+It is used in definitions and assignments. E.g:
+```
+var name = input("Type your name: ");
+name = "Hello " + name;
+```
+```
