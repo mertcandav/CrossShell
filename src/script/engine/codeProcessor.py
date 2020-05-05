@@ -1,5 +1,7 @@
 # Imports.
 import re
+from core.CrossShell import *
+from framework.cli import *
 
 class codeProcessor:
     @staticmethod
@@ -27,6 +29,17 @@ class codeProcessor:
             pass
 
         return commands
+        pass
+
+    @staticmethod
+    def isBannedName(code: str) -> bool:
+        if (re.match("(^[0-9].*)|True|False|.*(\\$|#|\\-|<|>|\\?|\\*|\\\\|\\{|\\}|\\[|\\]|\\(|\\)|\\&|`|´|=|%|\\+|'|\"|\\^|!|/|\\.|;|¨|~|:|₺|€|\\||£).*", code,
+            flags = re.UNICODE | re.IGNORECASE | re.UNICODE | re.S)):
+            werr(scriptRuntimeErrors, "Forbidden character was used in the definition!", 11)
+            return True
+            pass
+
+        return False
         pass
 
     pass

@@ -5,6 +5,7 @@ from core.functions.cd import *
 from core.terminal import terminal
 from core.CrossShell import *
 from script.engine.codeProcessor import *
+from script.engine.variableProcessor import *
 from script.engine.funcProcessor import funcProcessor
 from framework.cli import *
 from framework.fs import *
@@ -68,6 +69,13 @@ class scripter:
                     if fpresult != ERROR:
                         continue
                         pass
+                if variableProcessor.isVariableCode(command):
+                    if variableProcessor.process(variables, command) == ERROR:
+                        return
+                        pass
+
+                    continue
+                    pass
 
                 term.onecmd(command)
                 pass

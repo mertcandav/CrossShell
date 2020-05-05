@@ -15,16 +15,8 @@ class valueProcessor:
         val = ""
         for part in parts:
             part = part.strip()
-            if part.startswith("&") == True:
-                if part == "&":
-                    werr(scriptRuntimeErrors, "Variable is not specified!", 4)
-                    return ERROR
-                    pass
-                if variable.exists(variables, part[1:]) == False:
-                    werr(scriptRuntimeErrors, "The variable tried to be reached is not defined!", 5)
-                    return ERROR
-                    pass
-                val += variable.getByName(variables, part[1:]).Value
+            if variable.exists(variables, part) == True:
+                val += variable.getByName(variables, part).Value
                 continue
                 pass
             if part.startswith("\"") == True:
@@ -48,11 +40,11 @@ class valueProcessor:
                 continue
                 pass
 
-            fpresult = funcProcessor.process(variables, part)
-            if fpresult == ERROR:
-                return ERROR
-                pass
-            if fpresult != ERROR:
+            if funcProcessor.isFunc(part):
+                fpresult = funcProcessor.process(variables, part)
+                if fpresult == ERROR:
+                    return ERROR
+                    pass
                 if fpresult == None:
                     werr(scriptRuntimeErrors, "The function that does not return a value was used in the value conversion!", 1)
                     return ERROR

@@ -22,4 +22,15 @@ class variable:
             pass
         pass
 
+    @staticmethod
+    def indexOf(lst: list, name: str):
+        for dex in range(0, lst.__len__()):
+            if lst[dex].Name == name:
+                return dex
+                pass
+            pass
+
+        return -1
+        pass
+
     pass

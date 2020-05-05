@@ -111,13 +111,16 @@ scriptErrors = {
 }
 
 scriptRuntimeErrors = {
-    0: "scffff1x0",         # Script command not recognized!
-    1: "scffff1x1",         # The function that does not return a value was used in the value conversion!
-    2: "scffff1x2",         # Error in value conversion!
-    3: "scffff1x3",         # More parameters have been sent to the function than you can take!
-    4: "scffff1x4",         # Variable is not specified!
-    5: "scffff1x5",         # The variable tried to be reached is not defined!
-    6: "scffff1x6",         # The function is turned on but not turned off!
-    7: "scffff1x7",         # Function not recognized!
-    8: "scffff1x8",         # No color found!
+    0:      "scffff1x0",         # Script command not recognized!
+    1:      "scffff1x1",         # The function that does not return a value was used in the value conversion!
+    2:      "scffff1x2",         # Error in value conversion!
+    3:      "scffff1x3",         # More parameters have been sent to the function than you can take!
+    4:      "scffff1x4",         # Variable is not specified!
+    5:      "scffff1x5",         # 
+    6:      "scffff1x6",         # The function is turned on but not turned off!
+    7:      "scffff1x7",         # Function not recognized!
+    8:      "scffff1x8",         # No color found!
+    9:      "scffff1x9",         # Error in variable definition!
+    10:     "scffff1x10",        # An attempt was made to define a variable that has already been defined!
+    11:     "scffff1x11",        # Forbidden character was used in the definition!
 }
