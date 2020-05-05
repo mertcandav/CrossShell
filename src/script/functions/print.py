@@ -34,6 +34,10 @@ class scfunc_print:
         
         print(val)
 
+        if params.__len__() == 2:
+            scfunc_setForeColor.process(term, paths, functions, variables, "\"Default\"")
+            pass
+
         pass
 
     pass
