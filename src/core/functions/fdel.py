@@ -31,8 +31,6 @@ f"   {NGREEN}-rgx{WHITE}                     Use regular expressions."
             )
             return
             pass
-        
-        cmd = paramProcessor.getNonParam(cmd)
 
         msg = ""
         regex = False
@@ -48,19 +46,22 @@ f"   {NGREEN}-rgx{WHITE}                     Use regular expressions."
 
         if (msg != ERROR):
             if regex == True:
+                cmd = paramProcessor.removeParams(cmd)
+                cmd = Eng_string.process(cmd)
+                if cmd == ERROR:
+                    return
+                    pass
+
                 dirs = fs.getFiles(term.CurrentPath)
                 dirs = (val for val in dirs if re.match(cmd, val))
                 for _dir in dirs:
-                    if re.match(cmd, _dir) == False:
-                        continue
-                        pass
-
-                    os.remove(_dir)
+                    os.remove(os.path.join(term.CurrentPath, _dir))
                     pass
                 pass
             else:
+                cmd = paramProcessor.getNonParam(cmd)
                 path = os.path.join(term.CurrentPath, cmd)
-                os.remove(path)
+                os.remove(os.path.join(term.CurrentPath, path))
                 pass
             return
             pass
