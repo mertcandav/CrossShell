@@ -33,7 +33,7 @@ class codeProcessor:
 
     @staticmethod
     def isBannedName(code: str) -> bool:
-        if (re.match("(^[0-9].*)|True|False|.*(\\$|#|\\-|<|>|\\?|\\*|\\\\|\\{|\\}|\\[|\\]|\\(|\\)|\\&|`|´|=|%|\\+|'|\"|\\^|!|/|\\.|;|¨|~|:|₺|€|\\||£).*", code,
+        if (re.match("(^[0-9].*)|True|False|.*( |\\$|#|\\-|<|>|\\?|\\*|\\\\|\\{|\\}|\\[|\\]|\\(|\\)|\\&|`|´|=|%|\\+|'|\"|\\^|!|/|\\.|;|¨|~|:|₺|€|\\||£).*", code,
             flags = re.UNICODE | re.IGNORECASE | re.UNICODE | re.S)):
             werr(scriptRuntimeErrors, "Forbidden character was used in the definition!", 11)
             return True
