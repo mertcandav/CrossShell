@@ -9,7 +9,7 @@ def exitwerr(collection: dict, err: str, code: int) -> None:
     cprint(RED, f"Ops! An error has occurred!\nError: " +
         err + RED + "\nCode: { " + YELLOW + collection[code] + RED + " }")
     input("\n\nPress enter for close... ")
-    exit(1)
+    sys.exit(1)
     pass
 
 def werr(collection: dict, err: str, code: int) -> None:

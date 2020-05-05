@@ -58,7 +58,7 @@ class CS_SHELL(cmd.Cmd):
         pass
 
     def do_exit(self, args: str) -> None:
-        exit(0)
+        sys.exit(0)
         pass
 
     def do_clear(self, args: str) -> None:
