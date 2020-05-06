@@ -48,3 +48,23 @@ Type your name: <user input> # Mertcan
 Hello Mertcan
 <#
 ```
+
+<br>
+
+## ->
+Used to specify functions. This way variables etc. You can use. E.g:
+```
+var name = -> { 
+    var userinput = input("Type your name: ");
+    userinput = "Hello " + userinput;
+    return userinput;
+};
+print(name);
+
+#>
+OUTPUT
+
+Type your name: <user input> # Mertcan
+Hello Mertcan
+<#
+```
