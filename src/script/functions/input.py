@@ -7,7 +7,7 @@ from framework.cli import *
 
 class scfunc_input:
     @staticmethod
-    def process(term, paths: list, functions: list, variables: list, content: str) -> str:
+    def process(base, content: str) -> str:
         # Imports.
         from script.engine.funcProcessor import funcProcessor
 
@@ -16,7 +16,7 @@ class scfunc_input:
             return ERROR
             pass
 
-        val = valueProcessor.process(term, paths, functions, variables, content)
+        val = valueProcessor.process(base, content)
         if val == ERROR:
             return ERROR
             pass

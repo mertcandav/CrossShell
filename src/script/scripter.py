@@ -12,12 +12,18 @@ from framework.fs import *
 from script.functions.input import *
 
 class scripter:
+    term = None
+    basePath = None
+    scriptPath = None
+    functions = None
+    variables = None
+
     @staticmethod
-    def processRange(term: terminal, paths: list, functions: list, variables: list, commands: list) -> [ None, str ]:
+    def processRange(base, commands: list) -> [ None, str ]:
         for command in commands:
             if command.startswith("return"):
                 if command.startswith("return "):
-                    val = valueProcessor.process(term, paths, functions, variables, command[7:].strip())
+                    val = valueProcessor.process(base, command[7:].strip())
                     if val == ERROR:
                         return ERROR
                         pass
@@ -28,7 +34,7 @@ class scripter:
                 return None
                 pass
             if command.startswith(">"):
-                if scripter.execScriptCommand(term, paths, command[1:]) == False:
+                if base.execScriptCommand(command[1:]) == False:
                     return
                     pass
                 continue
@@ -38,7 +44,7 @@ class scripter:
                 operatorDex = command.find("<-")
                 if operatorDex != -1:
                     valuePart = command[operatorDex+2:].strip()
-                    val = valueProcessor.process(variables, valuePart)
+                    val = valueProcessor.process(base.variables, valuePart)
                     if val == ERROR:
                         return
                         pass
@@ -46,12 +52,12 @@ class scripter:
                     command = command[:operatorDex] + val
                     pass
 
-                term.Shell.onecmd(command)
+                base.term.Shell.onecmd(command)
                 continue
                 pass
             else:
                 if funcProcessor.isFunc(command):
-                    fpresult = funcProcessor.process(term, paths, functions, variables, command)
+                    fpresult = funcProcessor.process(base, command)
                     if fpresult == ERROR:
                         return
                         pass
@@ -59,7 +65,7 @@ class scripter:
                         continue
                         pass
                 if variableProcessor.isVariableCode(command):
-                    if variableProcessor.process(term, paths, functions, variables, command) == ERROR:
+                    if variableProcessor.process(base, command) == ERROR:
                         return
                         pass
 
@@ -69,7 +75,7 @@ class scripter:
                     funcProcessor.isFuncCode(command) |
                     funcProcessor.isFuncDefination(command) |
                     funcProcessor.isFuncOverride(command)):
-                    if funcProcessor.processCode(term, paths, functions, variables, command) == ERROR:
+                    if funcProcessor.processCode(base, command) == ERROR:
                         return
                         pass
 
@@ -79,7 +85,7 @@ class scripter:
                 operatorDex = command.find("<-")
                 if operatorDex != -1:
                     valuePart = command[operatorDex+2:].strip()
-                    val = valueProcessor.process(term, paths, functions, variables, valuePart)
+                    val = valueProcessor.process(base, valuePart)
                     if val == ERROR:
                         return
                         pass
@@ -87,7 +93,7 @@ class scripter:
                     command = command[:operatorDex] + val
                     pass
 
-                term.onecmd(command)
+                base.term.onecmd(command)
                 pass
 
             pass
@@ -95,21 +101,20 @@ class scripter:
         return None
         pass
 
-    @staticmethod
-    def execScriptCommand(term: terminal, paths: list, cmd: str) -> bool:
+    def execScriptCommand(self, cmd: str) -> bool:
         cmd = cmd.strip()
         lcmd = cmd.lower()
         if lcmd == "break":
             return False
             pass
         if lcmd == "cdbasepath":
-            term.CurrentPath = paths[0]
-            term.Shell.Update()
+            self.term.CurrentPath = self.basePath
+            self.term.Shell.Update()
             return True
             pass
         if lcmd == "cdscriptpath":
-            term.CurrentPath = paths[1]
-            term.Shell.Update()
+            self.term.CurrentPath = self.scriptPath
+            self.term.Shell.Update()
             return True
             pass
         
@@ -117,24 +122,25 @@ class scripter:
         return
         pass
 
-    @staticmethod
-    def interpret(term: terminal, path: str) -> None:
+    def interpret(self, term: terminal, path: str) -> None:
         # Read code.
         code = fs.readAllText(path, "utf-8")
         
         # Prepare the code.
         code = codeProcessor.clearComments(code)
 
-        basePath = term.CurrentPath
+        self.basePath = term.CurrentPath
+        self.scriptPath = func_cd.process(path, "..")
 
-        term.CurrentPath = func_cd.process(path, "..")
+        self.term = term
+        term.CurrentPath = self.scriptPath
         term.Shell.Update()
 
-        variables = []
-        functions = []
+        self.variables = []
+        self.functions = []
         commands = codeProcessor.getCommands(code)
 
-        scripter.processRange(term, [ basePath, func_cd.process(path, "..") ], functions, variables, commands)
+        scripter.processRange(self, commands)
         pass
 
     pass

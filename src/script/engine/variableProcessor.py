@@ -7,7 +7,7 @@ from framework.cli import *
 
 class variableProcessor:
     @staticmethod
-    def process(term, paths: list, functions: list, variables: list, cmd: str) -> [ str, list ]:
+    def process(base, cmd: str) -> [ str, list ]:
 
         parts = cmd.split("=")
         if parts.__len__() > 2:
@@ -20,7 +20,7 @@ class variableProcessor:
 
         if variableProcessor.isVariableDefination(parts[0]) == True:
             name = parts[0][4:].strip()
-            if variable.exists(variables, name) == True:
+            if variable.exists(base.variables, name) == True:
                 werr(scriptRuntimeErrors, "An attempt was made to define a variable that has already been defined!", 10)
                 return ERROR
                 pass
@@ -29,7 +29,7 @@ class variableProcessor:
                 return ERROR
                 pass
 
-            value = valueProcessor.process(term, paths, functions, variables, parts[1])
+            value = valueProcessor.process(base, parts[1])
             if value == ERROR:
                 return ERROR
                 pass
@@ -38,17 +38,17 @@ class variableProcessor:
             pass
         else:
             name = parts[0]
-            if variable.exists(variables, name) == False:
+            if variable.exists(base.variables, name) == False:
                 werr(scriptRuntimeErrors, "The variable tried to be reached is not defined!", 5)
                 return ERROR
                 pass
 
-            value = valueProcessor.process(term, paths, functions, variables, parts[1])
+            value = valueProcessor.process(base, parts[1])
             if value == ERROR:
                 return ERROR
                 pass
 
-            variables[variable.indexOf(variables, name)].Value = value
+            variables[variable.indexOf(base.variables, name)].Value = value
             pass
 
         pass

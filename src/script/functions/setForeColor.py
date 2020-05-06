@@ -9,7 +9,7 @@ from framework.cli import *
 
 class scfunc_setForeColor:
     @staticmethod
-    def process(term, paths: list, functions: list, variables: list, content: str) -> None:
+    def process(base, content: str) -> None:
         # Imports.
         from script.engine.funcProcessor import funcProcessor
 
@@ -18,7 +18,7 @@ class scfunc_setForeColor:
             return ERROR
             pass
 
-        val = valueProcessor.process(term, paths, functions, variables, content)
+        val = valueProcessor.process(base, content)
         if val == ERROR:
             return ERROR
             pass

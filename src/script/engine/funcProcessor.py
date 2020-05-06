@@ -11,7 +11,7 @@ from framework.cli import *
 
 class funcProcessor:
     @staticmethod
-    def process(term: terminal, paths: list, functions: list, variables: list, cmd: str) -> str:
+    def process(base, cmd: str) -> str:
         # Imports.
         from script.scripter import scripter
 
@@ -25,7 +25,7 @@ class funcProcessor:
             pass
 
         name = cmd[:dex]
-        if funcs.keys().__contains__(name) == False | function.exists(functions, name) == False:
+        if funcs.keys().__contains__(name) == False | function.exists(base.functions, name) == False:
             werr(scriptRuntimeErrors, "Function not recognized!", 7)
             return ERROR
             pass
@@ -33,16 +33,16 @@ class funcProcessor:
         if funcs.keys().__contains__(name) == True:
             content = cmd[dex+1:]
             content = content[:content.__len__()-1]
-            return funcs[name].process(term, paths, functions, variables, content)
+            return funcs[name].process(base, content)
             pass
         else:
-            return scripter.processRange(term, paths, functions, variables,
-                function.getByName(functions, name).Commands)
+            return scripter.processRange(base,
+                function.getByName(base.functions, name).Commands)
             pass
         pass
 
     @staticmethod
-    def processCode(term: terminal, paths: list, functions: list, variables: list, cmd: str) -> [ None, str ]:
+    def processCode(base, cmd: str) -> [ None, str ]:
         # Imports.
         from script.scripter import scripter
         
@@ -65,7 +65,7 @@ class funcProcessor:
                 return ERROR
                 pass
 
-            functions.append(function(name, commands))
+            base.functions.append(function(name, commands))
             return
             pass
         # Run defination.
@@ -75,7 +75,7 @@ class funcProcessor:
                 return ERROR
                 pass
 
-            return scripter.processRange(term, paths, functions, variables, commands)
+            return scripter.processRange(base, commands)
             pass
         # Overriding.
         if funcProcessor.isFuncOverride(cmd) == True:
@@ -85,7 +85,7 @@ class funcProcessor:
                 return ERROR
                 pass
 
-            if function.exists(functions, name) == False:
+            if function.exists(base.functions, name) == False:
                 werr(scriptRuntimeErrors, f"Attempt to override the non-existent function!", 15)
                 return ERROR
                 pass
@@ -95,7 +95,7 @@ class funcProcessor:
                 return ERROR
                 pass
 
-            functions[function.indexOf(functions, name)].Commands = commands
+            base.functions[function.indexOf(base.functions, name)].Commands = commands
             pass
 
         pass

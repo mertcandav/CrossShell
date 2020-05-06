@@ -7,7 +7,7 @@ from framework.cli import *
 
 class valueProcessor:
     @staticmethod
-    def process(term, paths: list, functions: list, variables: list, cmd: str) -> str:
+    def process(base, cmd: str) -> str:
         # Imports.
         from script.engine.funcProcessor import funcProcessor
 
@@ -15,8 +15,8 @@ class valueProcessor:
         val = ""
         for part in parts:
             part = part.strip()
-            if variable.exists(variables, part) == True:
-                val += variable.getByName(variables, part).Value
+            if variable.exists(base.variables, part) == True:
+                val += variable.getByName(base.variables, part).Value
                 continue
                 pass
             if part.startswith("\"") == True:
@@ -41,7 +41,7 @@ class valueProcessor:
                 pass
 
             if funcProcessor.isFunc(part):
-                fpresult = funcProcessor.process(term, paths, functions, variables, part)
+                fpresult = funcProcessor.process(base, part)
                 if fpresult == ERROR:
                     return ERROR
                     pass
@@ -54,7 +54,7 @@ class valueProcessor:
                 continue
                 pass
             if funcProcessor.isFuncCode(part):
-                fpresult = funcProcessor.processCode(term, paths, functions, variables, part)
+                fpresult = funcProcessor.processCode(base, part)
                 if fpresult == ERROR:
                     return ERROR
                     pass
