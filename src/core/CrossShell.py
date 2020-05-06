@@ -125,4 +125,6 @@ scriptRuntimeErrors = {
     11:     "scffff1x11",        # Forbidden character was used in the definition!
     12:     "scffff1x12",        # The function body is turned not on!
     13:     "scffff1x13",        # An attempt was made to define a function that has already been defined!
+    14:     "scffff1x14",        # '<name>' function cannot be overrideed!
+    15:     "scffff1x15",        # Attempt to override the non-existent function!
 }

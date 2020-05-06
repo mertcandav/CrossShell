@@ -77,6 +77,27 @@ class funcProcessor:
 
             return scripter.processRange(term, paths, functions, variables, commands)
             pass
+        # Overriding.
+        if funcProcessor.isFuncOverride(cmd) == True:
+            name = funcProcessor.getName(cmd)
+            if funcs.keys().__contains__(name):
+                werr(scriptRuntimeErrors, f"'{name}' function cannot be overrideed!", 14)
+                return ERROR
+                pass
+
+            if function.exists(functions, name) == False:
+                werr(scriptRuntimeErrors, f"Attempt to override the non-existent function!", 15)
+                return ERROR
+                pass
+
+            commands = funcProcessor.getBody(cmd)
+            if commands == ERROR:
+                return ERROR
+                pass
+
+            functions[function.indexOf(functions, name)].Commands = commands
+            pass
+
         pass
 
     @staticmethod
@@ -113,6 +134,11 @@ class funcProcessor:
     @staticmethod
     def isFuncDefination(cmd: str) -> bool:
         return cmd.startswith("func ")
+        pass
+
+    @staticmethod
+    def isFuncOverride(cmd: str) -> bool:
+        return re.match("( *|;( *))\w+( *)\->.*", cmd, flags = re.UNICODE | re.MULTILINE) is not None
         pass
 
     @staticmethod

@@ -65,7 +65,10 @@ class scripter:
 
                     continue
                     pass
-                if funcProcessor.isFuncCode(command) | funcProcessor.isFuncDefination(command):
+                if (
+                    funcProcessor.isFuncCode(command) |
+                    funcProcessor.isFuncDefination(command) |
+                    funcProcessor.isFuncOverride(command)):
                     if funcProcessor.processCode(term, paths, functions, variables, command) == ERROR:
                         return
                         pass
