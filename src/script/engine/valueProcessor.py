@@ -1,4 +1,5 @@
 # Imports.
+import re
 from script.objects.variable import *
 from engine.values.Eng_string import *
 from engine.values.Eng_char import *
@@ -11,7 +12,7 @@ class valueProcessor:
         # Imports.
         from script.engine.funcProcessor import funcProcessor
 
-        parts = cmd.split('+')
+        parts =  re.split("(?![^{]*\})\\+", cmd, flags = re.UNICODE | re.MULTILINE)
         val = ""
         for part in parts:
             part = part.strip()

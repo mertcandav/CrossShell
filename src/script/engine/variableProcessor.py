@@ -1,4 +1,5 @@
 # Imports.
+import re
 from script.engine.codeProcessor import *
 from script.objects.variable import *
 from script.engine.valueProcessor import *
@@ -9,8 +10,8 @@ class variableProcessor:
     @staticmethod
     def process(base, cmd: str) -> [ str, list ]:
 
-        parts = cmd.split("=")
-        if parts.__len__() > 2:
+        parts = cmd.split("=", 1)#re.split("^(var|)( *)\\w( *)=( *)")
+        if parts.__len__() < 2:
             werr(scriptRuntimeErrors, "Error in variable definition!", 9)
             return ERROR
             pass
@@ -34,7 +35,7 @@ class variableProcessor:
                 return ERROR
                 pass
 
-            variables.append(variable(name, value))
+            base.variables.append(variable(name, value))
             pass
         else:
             name = parts[0]
@@ -48,7 +49,7 @@ class variableProcessor:
                 return ERROR
                 pass
 
-            variables[variable.indexOf(base.variables, name)].Value = value
+            base.variables[variable.indexOf(base.variables, name)].Value = value
             pass
 
         pass
