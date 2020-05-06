@@ -6,7 +6,7 @@ from framework.cli import *
 class terminal:
     # Fields.
     CurrentPath = ""
-    SysShell = ""
+    SysShell = "$"
     Shell = CS_SHELL()
 
     def __init__(self, currentPath):

@@ -24,6 +24,7 @@ from core.functions.more import *
 from engine.values.Eng_string import *
 from engine.values.Eng_char import *
 from core.CrossShell import *
+from core.csJSON import *
 from framework.fs import *
 from framework.cli import *
 
@@ -166,16 +167,14 @@ class CS_SHELL(cmd.Cmd):
         # System Shell Integration
         if line.startswith(SysIntegrationMark):
             if line == SysIntegrationMark:
-                csjson = json.loads(fs.readAllText("CrossShell.json", "utf-8"))
                 if self.term.SysShell == "":
                     self.term.SysShell = SysIntegrationMark
-                    csjson["settings"]["SysIntegration"] = True
+                    updateJSON("SysIntegration", True)
                     pass
                 else:
                     self.term.SysShell = ""
-                    csjson["settings"]["SysIntegration"] = False
+                    updateJSON("SysIntegration", False)
                     pass
-                fs.writeAllText("CrossShell.json", json.dumps(csjson, indent=4), "utf-8")
                 self.Update()
                 return
                 pass

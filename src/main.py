@@ -61,7 +61,7 @@ def process_CrossShellJSON() -> None:
     csjson = json.loads(fs.readAllText("CrossShell.json", "utf-8"))
 
     # System Shell Integration
-    if csjson["settings"]["SysIntegration"] == True:
+    if csjson["SysIntegration"] == True:
         term.SysShell = "$"
         pass
 
