@@ -53,6 +53,19 @@ class valueProcessor:
                 val += fpresult
                 continue
                 pass
+            if funcProcessor.isFuncCode(part):
+                fpresult = funcProcessor.processCode(term, paths, functions, variables, part)
+                if fpresult == ERROR:
+                    return ERROR
+                    pass
+                if fpresult == None:
+                    werr(scriptRuntimeErrors, "The function that does not return a value was used in the value conversion!", 1)
+                    return ERROR
+                    pass
+
+                val += fpresult
+                continue
+                pass
 
             werr(scriptRuntimeErrors, "Error in value conversion!", 2)
             return ERROR

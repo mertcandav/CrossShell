@@ -20,7 +20,6 @@ class codeProcessor:
         commands = []
         for command in re.split("(?![^{]*\});", code, flags = re.UNICODE | re.MULTILINE):
             command = command.strip()
-            print(command)
 
             if (command == "") | (command == "@") | (command == ">"):
                 continue
