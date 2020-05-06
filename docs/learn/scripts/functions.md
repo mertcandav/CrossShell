@@ -22,7 +22,7 @@ Hello Mertcan
 Local function calling:
 ```go
 var message = -> {
-    var input = input("Type your name: ")İ
+    var input = input("Type your name: ");
     input = "Hello" + input;
     return input;
 };
