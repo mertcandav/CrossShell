@@ -18,8 +18,9 @@ class codeProcessor:
     @staticmethod
     def getCommands(code: str) -> list:
         commands = []
-        for command in code.split(";"):
+        for command in re.split("(?![^{]*\});", code, flags = re.UNICODE | re.MULTILINE):
             command = command.strip()
+            print(command)
 
             if (command == "") | (command == "@") | (command == ">"):
                 continue
