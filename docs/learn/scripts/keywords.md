@@ -32,3 +32,22 @@ func getNameInput -> {
     return input;
 };
 ```
+
+<br>
+
+## delete
+Gösterilen bir değişken veya fonksiyonu bellekten siler. E.g:
+```
+var name = input("Type your name: ");
+print("Hello " + name);
+delete name;
+```
+```
+func getNameInput -> {
+    var input = input("Type your name: ");
+    return input;
+};
+
+print(getNameInput());
+delete getNameInput();
+```
