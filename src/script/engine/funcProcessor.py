@@ -55,7 +55,7 @@ class funcProcessor:
                 return ERROR
                 pass
 
-            if function.exists(functions, name) | funcs.keys().__contains__(name):
+            if function.exists(base.functions, name) | funcs.keys().__contains__(name):
                 werr(scriptRuntimeErrors, "An attempt was made to define a function that has already been defined!", 13)
                 return ERROR
                 pass

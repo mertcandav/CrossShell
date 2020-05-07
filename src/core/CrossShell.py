@@ -127,4 +127,6 @@ scriptRuntimeErrors = {
     13:     "scffff1x13",        # An attempt was made to define a function that has already been defined!
     14:     "scffff1x14",        # '<name>' function cannot be overrideed!
     15:     "scffff1x15",        # Attempt to override the non-existent function!
+    16:     "scffff1x16",        # An attempt was made to delete the undefined function from memory!
+    17:     "scffff1x16",        # An attempt was made to delete the undefined variable from memory!
 }

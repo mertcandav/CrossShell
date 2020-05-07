@@ -6,6 +6,7 @@ from core.terminal import terminal
 from core.CrossShell import *
 from script.engine.codeProcessor import *
 from script.engine.variableProcessor import *
+from script.engine.keywordProcessor import *
 from script.engine.funcProcessor import funcProcessor
 from framework.cli import *
 from framework.fs import *
@@ -21,6 +22,13 @@ class scripter:
     @staticmethod
     def processRange(base, commands: list) -> [ None, str ]:
         for command in commands:
+            kpresult = keywordProcessor.process(base, command)
+            if kpresult == True:
+                continue
+                pass
+            if kpresult == ERROR:
+                return
+                pass
             if command.startswith("return"):
                 if command.startswith("return "):
                     val = valueProcessor.process(base, command[7:].strip())
