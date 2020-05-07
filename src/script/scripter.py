@@ -72,18 +72,18 @@ class scripter:
                     if fpresult != ERROR:
                         continue
                         pass
-                if variableProcessor.isVariableCode(command):
-                    if variableProcessor.process(base, command) == ERROR:
-                        return
-                        pass
-
-                    continue
-                    pass
                 if (
                     funcProcessor.isFuncCode(command) |
                     funcProcessor.isFuncDefination(command) |
                     funcProcessor.isFuncOverride(command)):
                     if funcProcessor.processCode(base, command) == ERROR:
+                        return
+                        pass
+
+                    continue
+                    pass
+                if variableProcessor.isVariableCode(command):
+                    if variableProcessor.process(base, command) == ERROR:
                         return
                         pass
 

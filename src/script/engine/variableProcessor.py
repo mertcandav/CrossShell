@@ -18,7 +18,6 @@ class variableProcessor:
 
         parts[0] = parts[0].strip()
         parts[1] = parts[1].strip()
-
         if variableProcessor.isVariableDefination(parts[0]) == True:
             name = parts[0][4:].strip()
             if variable.exists(base.variables, name) == True:
