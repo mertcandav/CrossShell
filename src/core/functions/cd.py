@@ -27,11 +27,11 @@ class func_cd:
             pth = pth.joinpath(element + seperator)
             pass
         pthstr = pth.__str__()
-        if os.path.isdir(pthstr) == False | os.path.exists(pthstr) == False:
+        if os.path.isfile(pthstr) == True:
             cprintln(RED,"There is no directory with this name!")
-            return pth.parent.__str__()
+            return pth
             pass
-        return pthstr[0:pthstr.__len__()]
+        return pthstr
         pass
 
     pass

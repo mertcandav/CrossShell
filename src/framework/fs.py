@@ -34,14 +34,14 @@ class fs:
     @staticmethod
     def getFiles(path: str) -> list:
         dirs = os.listdir(path)
-        dirs = (val for val in dirs if os.path.isfile(val) == True)
+        dirs = (val for val in dirs if os.path.isfile(os.path.join(path, val)) == True)
         return dirs
         pass
 
     @staticmethod
     def getDirectories(path: str) -> list:
         dirs = os.listdir(path)
-        dirs = (val for val in dirs if os.path.isfile(val) == False)
+        dirs = (val for val in dirs if os.path.isfile(os.path.join(path, val)) == False)
         return dirs
         pass
 
