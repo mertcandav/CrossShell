@@ -1,73 +1,53 @@
-# Functions
+# Conditions
 
-Functions should be used to make your job easier.
+You can direct algorithms with conditions. They have the same function as other scripting and programming languages.
 
-Defining and calling functions:
+Defining conditions:
 ```go
-func getName -> {
-    var input = input("Type your name: ");
-    return input;
-};
+var name = input("Type your name: ");
 
-print("Hello" + getName());
-
-#>
-OUTPUT
-
-Type your name: <User Input> # Mertcan
-Hello Mertcan
-<#
-```
-#
-Local function calling:
-```go
-var message = -> {
-    var input = input("Type your name: ");
-    input = "Hello" + input;
-    return input;
-};
-
-print(message);
-
-#>
-OUTPUT
-
-Type your name: <User Input> # Mertcan
-Hello Mertcan
-<#
-```
-#
-Function overriding:
-```go
-var name = "Undefined";
-
-func printName -> {
-    print(name);
-}
-
-printName();
-
-name = input("Type your name: ");
-
-printName();
-
-printName -> {
+if name != "" ->> {
     print("Hello " + name);
 };
 
-printName();
-
 #>
 OUTPUT
 
-Undefined
 Type your name: <User Input> # Mertcan
-Mertcan
 Hello Mertcan
+-----
+Type your name: <User Input> #
 <#
 ```
 
+After the condition is declared with the ``if`` keyword, the function of the condition is defined with the local function.
+
+> The functions of the conditions are indicated by ``->>`` and not by ``->``.
+
 <br>
 
+#
+
++ ``==``<br>
+Equal.
+
++ ``!=``<br>
+Not equal.
+
++ ``>``<br>
+Bigger.
+
++ ``<``<br>
+Lower.
+
++ ``>=``<br>
+Bigger or equal.
+
++ ``<=``<br>
+Lower or equal.
+
+#
+
 ## See also
-<a href="https://github.com/mertcandav/CrossShell/blob/master/docs/learn/scripts/definitions.md">Definitions</a>
+<a href="https://github.com/mertcandav/CrossShell/blob/master/docs/learn/scripts/definitions.md">Definitions</a><br>
+<a href="https://github.com/mertcandav/CrossShell/blob/master/docs/learn/scripts/functions.md">Functions</a>

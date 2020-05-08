@@ -62,3 +62,33 @@ if name != "" -> {
     print("Yellow", "Hello " + name)
 };
 ```
+
+<br>
+
+## true
+Declare True. E.g:
+```
+if true -> {
+    print("Yellow", "Hello World")
+};
+
+#>
+OUTPUT
+
+Hello World
+<#
+```
+
+## false
+Declare Frue. E.g:
+```
+if false -> {
+    print("Yellow", "Hello World")
+};
+
+#>
+OUTPUT
+
+
+<#
+```
