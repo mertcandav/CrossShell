@@ -43,6 +43,11 @@ class conditionProcessor:
             if parts[0] == ERROR:
                 return ERROR
                 pass
+
+            if _type == "boolean single":
+                return parts[0] == 1
+                pass
+
             parts[1] = valueProcessor.process(base, parts[1])
             if parts[1] == ERROR:
                 return ERROR
@@ -154,7 +159,7 @@ class conditionProcessor:
                 pass
 
             pass
-
+        return [ [ cmd, None ] , "boolean single" ]
         pass
 
     @staticmethod
@@ -171,7 +176,8 @@ conditionOperators = {
     ">":          "Bigger",
     "<":          "Lower",
     ">=":         "Bigger or equal",
-    "<=":         "Lower or equal"
+    "<=":         "Lower or equal",
+    "Boleean":    "Boolean signle"
 }
 
 conditionSeperators = [ "|", "&" ]
