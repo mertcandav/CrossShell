@@ -36,7 +36,7 @@ func getNameInput -> {
 <br>
 
 ## delete
-Gösterilen bir değişken veya fonksiyonu bellekten siler. E.g:
+Deletes a displayed variable or function from memory. E.g:
 ```
 var name = input("Type your name: ");
 print("Hello " + name);
@@ -50,4 +50,15 @@ func getNameInput -> {
 
 print(getNameInput());
 delete getNameInput();
+```
+
+<br>
+
+## if
+Declare a new condition. E.g:
+```
+var name = input("Type your name: ");
+if name != "" -> {
+    print("Yellow", "Hello " + name)
+};
 ```
