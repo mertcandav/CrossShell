@@ -71,6 +71,14 @@ class valueProcessor:
                 val += part
                 continue
                 pass
+            if part == "true":
+                val += part
+                continue
+                pass
+            if part == "false":
+                val += part
+                continue
+                pass
 
             
             werr(scriptRuntimeErrors, "Error in value conversion!", 2)
@@ -79,6 +87,12 @@ class valueProcessor:
 
         if val.isdigit():
             val = int(val)
+            pass
+        if val == "true":
+            val = 1
+            pass
+        if val == "false":
+            val = 0
             pass
 
         return val

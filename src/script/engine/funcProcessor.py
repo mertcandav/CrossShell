@@ -5,6 +5,7 @@ from script.engine.codeProcessor import *
 from script.objects.function import *
 from script.functions.input import *
 from script.functions.print import *
+from script.functions.isNaN import *
 from script.functions.setForeColor import *
 from core.CrossShell import *
 from framework.cli import *
@@ -184,4 +185,5 @@ funcs = {
     "input":                scfunc_input,
     "print":                scfunc_print,
     "setForeColor":         scfunc_setForeColor,
+    "isNaN":                scfunc_isNaN,
 }
