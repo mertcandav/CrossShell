@@ -44,7 +44,7 @@ class scripter:
                 pass
             if command.startswith(">"):
                 if base.execScriptCommand(command[1:]) == False:
-                    return
+                    return ERRORS
                     pass
                 continue
                 pass
