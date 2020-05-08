@@ -8,7 +8,7 @@ from framework.cli import *
 
 class valueProcessor:
     @staticmethod
-    def process(base, cmd: str) -> str:
+    def process(base, cmd: str) -> [ str, int ]:
         # Imports.
         from script.engine.funcProcessor import funcProcessor
 
@@ -17,7 +17,7 @@ class valueProcessor:
         for part in parts:
             part = part.strip()
             if variable.exists(base.variables, part) == True:
-                val += variable.getByName(base.variables, part).Value
+                val += variable.getByName(base.variables, part).Value.__str__()
                 continue
                 pass
             if part.startswith("\"") == True:
@@ -51,7 +51,7 @@ class valueProcessor:
                     return ERROR
                     pass
 
-                val += fpresult
+                val += fpresult.__str__()
                 continue
                 pass
             if funcProcessor.isFuncCode(part):
@@ -64,12 +64,21 @@ class valueProcessor:
                     return ERROR
                     pass
 
-                val += fpresult
+                val += fpresult.__str__()
+                continue
+                pass
+            if part.isdigit():
+                val += part
                 continue
                 pass
 
+            
             werr(scriptRuntimeErrors, "Error in value conversion!", 2)
             return ERROR
+            pass
+
+        if val.isdigit():
+            val = int(val)
             pass
 
         return val
