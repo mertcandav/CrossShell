@@ -118,7 +118,7 @@ class funcProcessor:
 
     @staticmethod
     def isFunc(val: str) -> bool:
-        return re.match("\\w*( *)\\(.*", val, flags = re.UNICODE | re.S)
+        return re.match("\\w*(\\s*)\\(.*", val, flags = re.UNICODE | re.S)
         pass
 
     @staticmethod
@@ -134,12 +134,12 @@ class funcProcessor:
 
     @staticmethod
     def isFuncDefination(cmd: str) -> bool:
-        return cmd.startswith("func ")
+        return cmd.startswith("func") | cmd.startswith("func\n")
         pass
 
     @staticmethod
     def isFuncOverride(cmd: str) -> bool:
-        return re.match("( *|;( *))\w+( *)\->.*", cmd, flags = re.UNICODE | re.MULTILINE) is not None
+        return re.match("(\\s*|;(\\s*))\w+(\\s*)\->.*", cmd, flags = re.UNICODE | re.S) is not None
         pass
 
     @staticmethod

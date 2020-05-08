@@ -164,7 +164,7 @@ class conditionProcessor:
 
     @staticmethod
     def isConditionStart(cmd: str) -> bool:
-        return re.match("if(\\s+).+(?=->).*", cmd) is not None
+        return re.match("if(\\s+).+(?=->).*", cmd, flags = re.UNICODE | re.S) is not None
         pass
 
     pass
