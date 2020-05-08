@@ -8,6 +8,7 @@ from script.engine.codeProcessor import *
 from script.engine.variableProcessor import *
 from script.engine.keywordProcessor import *
 from script.engine.funcProcessor import funcProcessor
+from script.engine.conditionProcessor import *
 from framework.cli import *
 from framework.fs import *
 from script.functions.input import *
@@ -78,6 +79,14 @@ class scripter:
                     funcProcessor.isFuncOverride(command)):
                     if funcProcessor.processCode(base, command) == ERROR:
                         return
+                        pass
+
+                    continue
+                    pass
+                if conditionProcessor.isConditionStart(command):
+                    cpresult = conditionProcessor.process(base, command[2:].strip())
+                    if cpresult == ERROR:
+                        return ERROR
                         pass
 
                     continue
