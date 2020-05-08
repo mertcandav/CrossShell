@@ -11,7 +11,7 @@ from framework.cli import *
 class conditionProcessor:
     @staticmethod
     def process(base, cmd: str) -> str:
-        funcDex = cmd.find("->")
+        funcDex = cmd.find("->>")
         if funcDex == -1:
             werr(scriptRuntimeErrors, "Condition function is not defined!", 18)
             return ERROR
@@ -25,7 +25,7 @@ class conditionProcessor:
             pass
 
         if pcresult == True:
-            pcresult = funcProcessor.processCode(base, cmd[funcDex:].strip())
+            pcresult = funcProcessor.processCode(base, "->" + cmd[funcDex+3:].strip())
             if pcresult == ERROR:
                 return ERROR
                 pass
