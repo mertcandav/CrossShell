@@ -12,6 +12,7 @@ from script.functions.trimRight import *
 from script.functions.lowerCase import *
 from script.functions.upperCase import *
 from script.functions.setForeColor import *
+from script.functions.concat import *
 from core.CrossShell import *
 from framework.cli import *
 
@@ -196,4 +197,5 @@ funcs = {
     "trimRight":            scfunc_trimRight,
     "lowerCase":            scfunc_lowerCase,
     "upperCase":            scfunc_upperCase,
+    "concat":               scfunc_concat,
 }
