@@ -16,6 +16,7 @@ from script.functions.avg import *
 from script.functions.sum import *
 from script.functions.multip import *
 from script.functions.subt import *
+from script.functions.divide import *
 from script.functions.concat import *
 from core.CrossShell import *
 from framework.cli import *
@@ -206,4 +207,5 @@ funcs = {
     "sum":                  scfunc_sum,
     "multip":               scfunc_multip,
     "subt":                 scfunc_subt,
+    "divide":               scfunc_divide,
 }
