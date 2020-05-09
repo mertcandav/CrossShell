@@ -7,6 +7,8 @@ from script.functions.input import *
 from script.functions.print import *
 from script.functions.isNaN import *
 from script.functions.trim import *
+from script.functions.trimLeft import *
+from script.functions.trimRight import *
 from script.functions.setForeColor import *
 from core.CrossShell import *
 from framework.cli import *
@@ -187,5 +189,7 @@ funcs = {
     "print":                scfunc_print,
     "setForeColor":         scfunc_setForeColor,
     "isNaN":                scfunc_isNaN,
-    "trim":                 scfunc_trim
+    "trim":                 scfunc_trim,
+    "trimLeft":             scfunc_trimLeft,
+    "trimRight":            scfunc_trimRight
 }
