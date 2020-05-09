@@ -13,6 +13,7 @@ from script.functions.lowerCase import *
 from script.functions.upperCase import *
 from script.functions.setForeColor import *
 from script.functions.avg import *
+from script.functions.sum import *
 from script.functions.concat import *
 from core.CrossShell import *
 from framework.cli import *
@@ -200,4 +201,5 @@ funcs = {
     "upperCase":            scfunc_upperCase,
     "concat":               scfunc_concat,
     "avg":                  scfunc_avg,
+    "sum":                  scfunc_sum,
 }
