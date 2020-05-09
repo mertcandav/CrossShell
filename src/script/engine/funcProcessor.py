@@ -129,7 +129,7 @@ class funcProcessor:
 
     @staticmethod
     def getParams(val: str) -> list:
-        params = val.split(",")
+        params = re.split("(?![^\(]*\)),|(?![^\{]*\}),", val)
         return params
         pass
 
