@@ -9,6 +9,7 @@ from script.functions.isNaN import *
 from script.functions.trim import *
 from script.functions.trimLeft import *
 from script.functions.trimRight import *
+from script.functions.lowerCase import *
 from script.functions.setForeColor import *
 from core.CrossShell import *
 from framework.cli import *
@@ -191,5 +192,6 @@ funcs = {
     "isNaN":                scfunc_isNaN,
     "trim":                 scfunc_trim,
     "trimLeft":             scfunc_trimLeft,
-    "trimRight":            scfunc_trimRight
+    "trimRight":            scfunc_trimRight,
+    "lowerCase":            scfunc_lowerCase,
 }
