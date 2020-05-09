@@ -72,6 +72,41 @@ class codeProcessor:
         pass
 
     @staticmethod
+    def decomposeBrackets(cmd: str) -> [ str, list ]:
+        parts = []
+
+        fcommand = ""
+        openBracketCount = 0
+        closed = False
+        for command in cmd:
+            if command == "(":
+                if closed:
+                    parts.append(fcommand)
+                    fcommand = "("
+                    openBracketCount = 1
+                    closed = False
+                    continue
+                    pass
+                openBracketCount += 1
+                pass
+            if command == ")":
+                openBracketCount -= 1
+                if openBracketCount == 0:
+                    fcommand += command
+                    parts.append(fcommand)
+                    fcommand = ""
+                    closed = True
+                    continue
+                    pass
+                pass
+            
+            fcommand += command
+            pass
+
+        return parts
+        pass
+
+    @staticmethod
     def isBannedName(code: str) -> bool:
         if (re.match("(^[0-9].*)|True|False|.*( |\\$|#|\\-|<|>|\\?|\\*|\\\\|\\{|\\}|\\[|\\]|\\(|\\)|\\&|`|´|=|%|\\+|'|\"|\\^|!|/|\\.|;|¨|~|:|₺|€|\\||£).*", code,
             flags = re.UNICODE | re.IGNORECASE | re.UNICODE | re.S)):

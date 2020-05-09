@@ -134,7 +134,7 @@ class scripter:
             self.term.Shell.Update()
             return True
             pass
-        
+
         werr(scriptRuntimeErrors, f"'{ORANGE}{cmd}{RED}' Script command not recognized!", 0)
         return
         pass

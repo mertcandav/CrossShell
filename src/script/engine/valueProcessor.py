@@ -68,6 +68,11 @@ class valueProcessor:
                 continue
                 pass
             if part.isdigit():
+                if val.isdigit():
+                    val = (int(val) + int(part)).__str__()
+                    continue
+                    pass
+
                 val += part
                 continue
                 pass
