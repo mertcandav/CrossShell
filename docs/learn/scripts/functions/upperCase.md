@@ -1,13 +1,13 @@
 # Function: upperCase
 
-Replaces all characters with lower case.
+Replaces all characters with upper case.
 
 Overloadings:
-+ ``lowerCase(value)``
++ ``upperCase(value)``
 
 Example use:
 ```
-var name = lowerCase(input("Type your name: "));
+var name = upperCase(input("Type your name: "));
 if name != "" ->> {
     print("Lime", "Hello " + name);
 };
@@ -18,7 +18,7 @@ delete name;
 #>
 OUTPUT
 
-Type your name: <input> # "      MERtcaN"
-Hello mertcan
+Type your name: <input> # "      mertCAn"
+Hello MERTCAN
 <#
 ```
