@@ -11,8 +11,8 @@ from script.functions.trimLeft import *
 from script.functions.trimRight import *
 from script.functions.lowerCase import *
 from script.functions.upperCase import *
-from script.functions.avg import *
 from script.functions.setForeColor import *
+from script.functions.avg import *
 from script.functions.concat import *
 from core.CrossShell import *
 from framework.cli import *
@@ -130,7 +130,7 @@ class funcProcessor:
 
     @staticmethod
     def getParams(val: str) -> list:
-        params = re.split("(?![^\(]*\)),|(?![^\{]*\}),", val)
+        params = re.split("(?![^->{]*\}),", val)
         return params
         pass
 
