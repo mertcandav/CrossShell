@@ -1,4 +1,4 @@
-# Function: avg
+# Function: multip
 
 Returns the multiply of all parameters.
 
@@ -7,7 +7,7 @@ Overloadings:
 
 Example use:
 ```
-var name = avg(5,5);
+var name = multip(5,5);
 print(name);
 delete name;
 
