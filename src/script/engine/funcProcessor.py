@@ -15,6 +15,7 @@ from script.functions.setForeColor import *
 from script.functions.avg import *
 from script.functions.sum import *
 from script.functions.multip import *
+from script.functions.subt import *
 from script.functions.concat import *
 from core.CrossShell import *
 from framework.cli import *
@@ -203,5 +204,6 @@ funcs = {
     "concat":               scfunc_concat,
     "avg":                  scfunc_avg,
     "sum":                  scfunc_sum,
-    "multip":                  scfunc_multip,
+    "multip":               scfunc_multip,
+    "subt":                 scfunc_subt,
 }

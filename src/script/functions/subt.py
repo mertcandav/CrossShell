@@ -5,7 +5,7 @@ from engine.values.Eng_string import *
 from core.CrossShell import *
 from framework.cli import *
 
-class scfunc_multip:
+class scfunc_subt:
     @staticmethod
     def process(base, content: str) -> str:
         # Imports.
@@ -26,7 +26,7 @@ class scfunc_multip:
                 val = cval
                 continue
                 pass
-            val = val * cval
+            val = val - cval
             pass
 
         return val
