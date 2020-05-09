@@ -11,6 +11,7 @@ from script.functions.trimLeft import *
 from script.functions.trimRight import *
 from script.functions.lowerCase import *
 from script.functions.upperCase import *
+from script.functions.avg import *
 from script.functions.setForeColor import *
 from script.functions.concat import *
 from core.CrossShell import *
@@ -198,4 +199,5 @@ funcs = {
     "lowerCase":            scfunc_lowerCase,
     "upperCase":            scfunc_upperCase,
     "concat":               scfunc_concat,
+    "avg":                  scfunc_avg,
 }
