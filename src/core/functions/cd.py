@@ -15,8 +15,12 @@ class func_cd:
             pass
         
         seperator = os.path.sep
-        pth = pth.joinpath(cmd + seperator)
+        pth = pth.joinpath(cmd)
         pthstr = pth.__str__()
+        if (os.path.isfile(pthstr) == True) | (os.path.exists(pthstr) == False):
+            cprintln(RED,"There is no directory with this name!")
+            return path
+            pass
         parts = pthstr.split(seperator)
         pth = Path(parts[0] + seperator)
         for element in parts:
@@ -27,10 +31,6 @@ class func_cd:
             pth = pth.joinpath(element + seperator)
             pass
         pthstr = pth.__str__()
-        if os.path.isfile(pthstr) == True:
-            cprintln(RED,"There is no directory with this name!")
-            return pth
-            pass
         return pthstr
         pass
 
