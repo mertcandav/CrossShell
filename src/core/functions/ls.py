@@ -54,7 +54,7 @@ f"   {NGREEN}-f{WHITE}                       Show files."
                 pass
             if element == "f":
                 for val in fs.getFiles(term.CurrentPath):
-                    cprint(CYAN,f"[FILE]")
+                    cprint(BLUE,f"[FILE]")
                     cprintln(WHITE,val)
                     pass
                 continue
