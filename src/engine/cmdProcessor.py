@@ -32,13 +32,7 @@ class cmdProcessor:
         lcmd = cmd.lower()
 
         if lcmd == "clear":
-            if platform.system() == "Windows":
-                os.system("cls")
-                pass
-            else:
-                os.system("clear")
-                pass
-            return
+            print("\e[1;1H\e[2J",end="")
             pass
 
         pass
